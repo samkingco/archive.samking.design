@@ -5,7 +5,7 @@ import { ThemeProvider } from 'emotion-theming';
 import { ActiveThemeProvider, useActiveTheme } from './components/ActiveTheme';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import { GlobalFonts } from './design-system';
+import { GlobalStyle, GlobalFonts } from './design-system';
 
 function AppContent() {
   const { activeTheme } = useActiveTheme();
@@ -13,6 +13,7 @@ function AppContent() {
   return (
     <Root>
       <ThemeProvider theme={activeTheme}>
+        <GlobalStyle />
         <GlobalFonts />
         <Header />
         <React.Suspense fallback={<em>Loading...</em>}>
