@@ -10,11 +10,25 @@ const envMap = {
 const PATHS = {
   bin: '.bin',
   dist: 'dist',
+  contentSrc: 'content',
+  contentDest: 'content/dist',
+  imagesDest: 'content/dist/images',
 };
 
 const PORTS = {
   SERVE_DIST: 3000,
 };
+
+function buildContent(stage = 'prod') {
+  console.log(`Building ${pkg.name} content for ${envMap[stage]}`);
+
+  const env = [
+    `NODE_ENV=${envMap[stage]}`,
+    `APP_IMAGE_BASE_URLS=${IMAGE_BASE_URLS[stage]}`,
+  ];
+
+  run(`${env.join(' ')} node ${PATHS.bin}/build-content.js`);
+}
 
 function start() {
   console.log(`Starting ${pkg.name} for ${envMap.dev}`);
@@ -40,8 +54,10 @@ module.exports = {
   start,
   build: {
     all(stage) {
+      buildContent(stage);
       buildSite(stage);
     },
+    content: buildContent,
     site: buildSite,
   },
   analyze,
