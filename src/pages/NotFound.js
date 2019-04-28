@@ -1,4 +1,5 @@
 import React from 'react';
+import { Box, Title } from '../design-system';
 
 function NotFound() {
   const [ready, setReady] = React.useState(false);
@@ -8,9 +9,9 @@ function NotFound() {
   }, []);
 
   return ready ? (
-    <div>
-      <h1>404 - Not found</h1>
-    </div>
+    <Box>
+      <Title>404 - Not found</Title>
+    </Box>
   ) : null;
 }
 
