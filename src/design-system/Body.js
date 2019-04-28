@@ -6,6 +6,9 @@ const Body = styled(BaseText)();
 Body.defaultProps = {
   as: 'p',
   m: 0,
+  fontFamily: 'text',
+  fontSize: 1,
+  letterSpacing: 'normal',
 };
 
 Body.displayName = 'Body';

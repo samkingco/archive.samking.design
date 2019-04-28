@@ -2,10 +2,8 @@ const breakpoints = ['32em', '56em', '64em'];
 const space = [0, 4, 8, 16, 24, 32, 64];
 
 export const fonts = {
-  text: '-apple-system, Helvetica, sans-serif',
-  textAlt: '-apple-system, Helvetica, sans-serif',
-  display: 'serif',
-  mono: '"SF Mono", Menlo, monospace',
+  text: '"Text", -apple-system, Helvetica, sans-serif',
+  textAlt: '"TextAlt", -apple-system, Helvetica, sans-serif',
 };
 
 export const fontSizes = [14, 16, 20, 32];
@@ -14,7 +12,7 @@ export const lineHeights = ['1em', '1.4em', '1.6em'];
 
 export const letterSpacings = {
   dense: '0',
-  normal: '0.05em',
+  normal: '0.02em',
   sparse: '0.25em',
 };
 
