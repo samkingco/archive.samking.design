@@ -9,6 +9,7 @@ export { default as Caption } from './Caption';
 export { default as Body } from './Body';
 export { default as Headline } from './Headline';
 export { default as Title } from './Title';
+export { default as Link } from './Link';
 
 export { default as Image } from './Image';
 export { default as Figure } from './Figure';
