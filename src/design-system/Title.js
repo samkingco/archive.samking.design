@@ -8,6 +8,7 @@ const Title = styled(BaseText)({
 Title.defaultProps = {
   as: 'h1',
   m: 0,
+  color: 'text',
   fontFamily: 'textAlt',
   fontSize: 3,
   letterSpacing: 'normal',

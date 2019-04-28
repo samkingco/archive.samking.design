@@ -29,7 +29,7 @@ function AppContent() {
 
 function App() {
   return (
-    <ActiveThemeProvider defaultThemeName="light">
+    <ActiveThemeProvider defaultThemeName="dark">
       <AppContent />
     </ActiveThemeProvider>
   );

@@ -8,6 +8,7 @@ const Headline = styled(BaseText)({
 Headline.defaultProps = {
   as: 'h2',
   m: 0,
+  color: 'text',
   fontFamily: 'textAlt',
   fontSize: 2,
   letterSpacing: 'normal',
