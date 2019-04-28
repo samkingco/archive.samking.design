@@ -3,6 +3,8 @@ import { Router } from '@reach/router';
 import { Root, Routes } from 'react-static';
 import { ThemeProvider } from 'emotion-theming';
 import { ActiveThemeProvider, useActiveTheme } from './components/ActiveTheme';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 function AppContent() {
   const { activeTheme } = useActiveTheme();
@@ -10,11 +12,13 @@ function AppContent() {
   return (
     <Root>
       <ThemeProvider theme={activeTheme}>
+        <Header />
         <React.Suspense fallback={<em>Loading...</em>}>
           <Router>
             <Routes path="*" />
           </Router>
         </React.Suspense>
+        <Footer />
       </ThemeProvider>
     </Root>
   );
