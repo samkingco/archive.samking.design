@@ -1,0 +1,51 @@
+{
+  "name": "samking-design",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build:content": "echo \"Use runjs command: 'npx run build:content'\"",
+    "start": "echo \"Use runjs command: 'npx run start'\"",
+    "stage": "echo \"Use runjs command: 'npx run build:site dev'\"",
+    "build": "echo \"Use runjs command: 'npx run build:site'\"",
+    "analyze": "echo \"Use runjs command: 'npx run analyze'\"",
+    "serve": "echo \"Use runjs command: 'npx run serve'\"",
+    "serve:images": "echo \"Use runjs command: 'npx run serveImages'\""
+  },
+  "dependencies": {
+    "@emotion/core": "^10.0.10",
+    "@emotion/styled": "^10.0.10",
+    "@reach/router": "^1.2.1",
+    "babel-plugin-emotion": "^10.0.9",
+    "emotion": "^10.0.9",
+    "emotion-theming": "^10.0.10",
+    "immer": "^2.1.5",
+    "react": "^16.8.2",
+    "react-dom": "^16.8.2",
+    "react-static": "^7.0.0",
+    "react-static-plugin-emotion": "^7.0.0",
+    "react-static-plugin-reach-router": "^7.0.0",
+    "styled-system": "^4.1.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "9.x",
+    "eslint": "5.x",
+    "eslint-config-react-app": "^3.0.8",
+    "eslint-config-react-tools": "1.x.x",
+    "eslint-plugin-flowtype": "2.x",
+    "eslint-plugin-import": "2.x",
+    "eslint-plugin-jsx-a11y": "6.x",
+    "eslint-plugin-react": "7.x",
+    "fs-extra": "^7.0.1",
+    "image-size": "^0.7.3",
+    "koa": "^2.7.0",
+    "koa-router": "^7.4.0",
+    "nodemon": "^1.18.11",
+    "prettier": "^1.16.4",
+    "remark": "^10.0.1",
+    "runjs": "^4.4.2",
+    "serve": "10.1.2",
+    "sharp": "^0.20.5",
+    "yamljs": "^0.3.0",
+    "yargs": "^13.2.2"
+  }
+}
