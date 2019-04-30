@@ -10,11 +10,33 @@ import {
   right,
   bottom,
   zIndex,
+  justifyContent,
+  justifySelf,
+  alignItems,
+  alignContent,
+  alignSelf,
+  flexBasis,
 } from 'styled-system';
 
 const Box = styled('div', {
   shouldForwardProp,
-})(space, width, color, position, top, left, right, bottom, zIndex);
+})(
+  space,
+  color,
+  width,
+  position,
+  top,
+  left,
+  right,
+  bottom,
+  zIndex,
+  justifyContent,
+  justifySelf,
+  alignItems,
+  alignContent,
+  alignSelf,
+  flexBasis,
+);
 
 Box.displayName = 'Box';
 
