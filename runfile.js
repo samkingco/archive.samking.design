@@ -21,8 +21,8 @@ const PORTS = {
 };
 
 const IMAGE_BASE_URLS = {
-  dev: 'https://samking.imgix.net',
-  prod: 'https://samking.imgix.net',
+  dev: 'https://samkingco.imgix.net/design',
+  prod: 'https://samkingco.imgix.net/design',
   local: `http://localhost:${PORTS.IMAGE_SERVER}`,
 };
 
