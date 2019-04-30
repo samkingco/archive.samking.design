@@ -1,7 +1,15 @@
 import React from 'react';
-import { Box, Headline, Body, Grid, Link } from '../design-system';
+import { Box, Headline, Body, Grid, Link, Flex } from '../design-system';
 
-function ProjectPreview({ slug, title, intro, date, myRole, ...props }) {
+function ProjectPreview({
+  slug,
+  title,
+  intro,
+  date,
+  myRole,
+  borderColor,
+  ...props
+}) {
   return (
     <Link
       to={`/${slug}`}
@@ -9,12 +17,15 @@ function ProjectPreview({ slug, title, intro, date, myRole, ...props }) {
       display="block"
       shouldUnderline={false}
       border={2}
-      borderColor="fg"
+      borderColor={borderColor}
     >
-      <Box borderBottom={2} borderColor="fg" p={2}>
-        <Headline as="h3" aria-label={`Project name: ${title}`} mb={1}>
-          {title}
-        </Headline>
+      <Box borderBottom={2} borderColor={borderColor} p={2}>
+        <Flex justifyContent="space-between" alignItems="center" mb={1}>
+          <Headline as="h3" aria-label={`Project name: ${title}`}>
+            {title}
+          </Headline>
+          <Headline>→</Headline>
+        </Flex>
         <Body aria-label="About:">{intro}</Body>
       </Box>
 
@@ -24,7 +35,7 @@ function ProjectPreview({ slug, title, intro, date, myRole, ...props }) {
           gridColumn={['1 / span 6', null, '1 / span 2']}
           py={1}
           px={2}
-          borderColor="fg"
+          borderColor={borderColor}
         >
           {date}
         </Body>
@@ -35,7 +46,7 @@ function ProjectPreview({ slug, title, intro, date, myRole, ...props }) {
           px={2}
           borderTop={[2, null, 0]}
           borderLeft={[0, null, 2]}
-          borderColor={['fg', null, 'fg']}
+          borderColor={[borderColor, null, borderColor]}
         >
           {myRole}
         </Body>

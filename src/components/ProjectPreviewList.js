@@ -4,7 +4,6 @@ import ProjectPreview from './ProjectPreview';
 
 function ProjectPreviewList({ projects, ...props }) {
   const [hoveredIndex, setHoveredIndex] = useState(null);
-  const isHovering = Number.isInteger(hoveredIndex);
 
   return (
     <Grid gridTemplateColumns="repeat(8, 1fr)" {...props}>
@@ -21,7 +20,7 @@ function ProjectPreviewList({ projects, ...props }) {
             '2 / span 6',
           ]}
           mb={index !== projects.length - 1 ? 4 : 0}
-          opacity={isHovering ? (hoveredIndex === index ? 1 : 0.48) : 1}
+          borderColor={hoveredIndex === index ? 'accent' : 'fg'}
           onMouseEnter={() => setHoveredIndex(index)}
           onMouseLeave={() => setHoveredIndex(null)}
         />
