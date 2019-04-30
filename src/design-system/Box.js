@@ -3,6 +3,7 @@ import shouldForwardProp from '@styled-system/should-forward-prop';
 import {
   space,
   color,
+  borders,
   width,
   position,
   top,
@@ -23,6 +24,7 @@ const Box = styled('div', {
 })(
   space,
   color,
+  borders,
   width,
   position,
   top,

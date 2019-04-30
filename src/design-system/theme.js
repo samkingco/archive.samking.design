@@ -16,6 +16,12 @@ export const letterSpacings = {
   extreme: '0.25em',
 };
 
+export const borders = [
+  'none',
+  '2px solid transparent',
+  '4px solid transparent',
+];
+
 export const baseColors = {
   black: '#000000',
   blackAlt: '#141414',
@@ -31,6 +37,8 @@ export const baseColors = {
 export const colorsDark = {
   bg: baseColors.black,
   bgAlt: baseColors.blackAlt,
+  fg: baseColors.white,
+  fgAlt: baseColors.greyOnBlack,
   text: baseColors.white,
   textAlt: baseColors.greyOnBlack,
   accent: baseColors.red,
@@ -40,6 +48,8 @@ export const colorsDark = {
 export const colorsLight = {
   bg: baseColors.white,
   bgAlt: baseColors.whiteAlt,
+  fg: baseColors.black,
+  fgAlt: baseColors.greyOnWhite,
   text: baseColors.black,
   textAlt: baseColors.greyOnWhite,
   accent: baseColors.red,
@@ -54,6 +64,7 @@ const defaultTheme = {
   fontWeights,
   lineHeights,
   letterSpacings,
+  borders,
 };
 
 const themes = {
