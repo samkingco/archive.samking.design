@@ -23,7 +23,7 @@ const Link = styled(({ to, ...props }) => {
 })();
 
 Link.defaultProps = {
-  color: 'text',
+  color: 'inherit',
   shouldUnderline: true,
 };
 
