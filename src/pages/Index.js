@@ -1,10 +1,11 @@
 import React from 'react';
-import { useRouteData } from 'react-static';
+import { useSiteData, useRouteData } from 'react-static';
 import { Box, Grid, Headline, Body, Link } from '../design-system';
 import ProjectPreviewList from '../components/ProjectPreviewList';
 import JobList from '../components/JobList';
 
 function Index() {
+  const { email, github } = useSiteData();
   const { projects, history } = useRouteData();
   const yearsExperience = new Date().getFullYear() - 2012;
 
@@ -37,9 +38,8 @@ function Index() {
         >
           This website serves as a small showcase of work from the last few
           years, both personal and for startups. If you’d like to know more,
-          feel free to email me at{' '}
-          <Link to="mailto:mail@samking.co">mail@samking.co</Link> or check out
-          my <Link to="https://github.com/samisking">GitHub</Link>.
+          feel free to email me at <Link to={`mailto:${email}`}>{email}</Link>{' '}
+          or check out my <Link to={github}>GitHub</Link>.
         </Body>
       </Grid>
 

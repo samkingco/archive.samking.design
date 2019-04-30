@@ -6,6 +6,7 @@ export default {
   plugins: ['react-static-plugin-reach-router', 'react-static-plugin-emotion'],
   getSiteData: async () => ({
     version: pkg.version,
+    email: 'mail@samking.co',
     github: 'https://github.com/samisking',
     repo: 'samking.design',
   }),
