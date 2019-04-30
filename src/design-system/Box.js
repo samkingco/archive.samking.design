@@ -17,6 +17,9 @@ import {
   alignContent,
   alignSelf,
   flexBasis,
+  gridColumn,
+  gridRow,
+  gridArea,
 } from 'styled-system';
 
 const Box = styled('div', {
@@ -38,6 +41,9 @@ const Box = styled('div', {
   alignContent,
   alignSelf,
   flexBasis,
+  gridColumn,
+  gridRow,
+  gridArea,
 );
 
 Box.displayName = 'Box';
