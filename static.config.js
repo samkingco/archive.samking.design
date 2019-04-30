@@ -1,8 +1,12 @@
+import pkg from './package.json';
 import projects from './content/dist/projects.json';
 import history from './content/dist/history.json';
 
 export default {
   plugins: ['react-static-plugin-reach-router', 'react-static-plugin-emotion'],
+  getSiteData: async () => ({
+    version: pkg.version,
+  }),
   getRoutes: async () => {
     const projectRoutes = [
       {

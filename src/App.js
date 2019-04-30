@@ -41,8 +41,8 @@ function AppContent() {
             <Router>
               <Routes path="*" />
             </Router>
+            <Footer />
           </React.Suspense>
-          <Footer />
         </Flex>
       </ThemeProvider>
     </Root>
