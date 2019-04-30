@@ -1,4 +1,4 @@
-const breakpoints = ['32em', '56em', '64em'];
+const breakpoints = ['32em', '40em', '56em', '64em'];
 const space = [0, 8, 16, 24, 32, 64];
 
 export const fonts = {
