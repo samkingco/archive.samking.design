@@ -46,15 +46,6 @@ export const colorsLight = {
   accentAlt: baseColors.redAlt,
 };
 
-export const colorsRed = {
-  bg: baseColors.red,
-  bgAlt: baseColors.redAlt,
-  text: baseColors.black,
-  textAlt: baseColors.white,
-  accent: baseColors.white,
-  accentAlt: baseColors.black,
-};
-
 const defaultTheme = {
   breakpoints,
   space,
@@ -73,10 +64,6 @@ const themes = {
   dark: {
     ...defaultTheme,
     colors: colorsDark,
-  },
-  red: {
-    ...defaultTheme,
-    colors: colorsRed,
   },
 };
 
