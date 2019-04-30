@@ -11,7 +11,8 @@ Headline.defaultProps = {
   color: 'text',
   fontFamily: 'textAlt',
   fontWeight: 'bold',
-  fontSize: 2,
+  fontSize: [1, 2],
+  lineHeight: 1,
   letterSpacing: 'normal',
 };
 

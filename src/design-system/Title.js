@@ -12,6 +12,7 @@ Title.defaultProps = {
   fontFamily: 'textAlt',
   fontWeight: 'normal',
   fontSize: 3,
+  lineHeight: 1,
   letterSpacing: 'normal',
 };
 

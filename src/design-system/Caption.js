@@ -10,6 +10,7 @@ Caption.defaultProps = {
   fontFamily: 'text',
   fontWeight: 'normal',
   fontSize: 0,
+  lineHeight: 1,
   letterSpacing: 'normal',
 };
 

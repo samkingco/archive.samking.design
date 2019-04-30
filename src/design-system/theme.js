@@ -8,12 +8,12 @@ export const fonts = {
 
 export const fontSizes = [14, 16, 20, 32];
 export const fontWeights = ['normal', 'bold'];
-export const lineHeights = ['1em', '1.4em', '1.6em'];
+export const lineHeights = ['1.2em', '1.4em', '1.6em'];
 
 export const letterSpacings = {
-  dense: '0',
   normal: '0.02em',
-  sparse: '0.25em',
+  sparse: '0.04em',
+  extreme: '0.25em',
 };
 
 export const baseColors = {

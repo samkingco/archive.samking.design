@@ -10,6 +10,7 @@ Body.defaultProps = {
   fontFamily: 'text',
   fontWeight: 'normal',
   fontSize: 1,
+  lineHeight: 1,
   letterSpacing: 'normal',
 };
 
