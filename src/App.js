@@ -6,6 +6,9 @@ import { ActiveThemeProvider, useActiveTheme } from './components/ActiveTheme';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import { GlobalStyle, GlobalFonts } from './design-system';
+import scrollHandler from './utils/scrollHandler';
+
+scrollHandler();
 
 function AppContent() {
   const { activeTheme } = useActiveTheme();
