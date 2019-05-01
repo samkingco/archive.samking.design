@@ -11,9 +11,9 @@ import {
   Grid,
   Caption,
 } from '../design-system';
+import { useTheme } from '../components/ActiveTheme';
 import ContentNode from '../components/ContentNode';
 import RelatedProjects from '../components/RelatedProjects';
-import { useTheme } from '../components/ActiveTheme';
 
 const Wrapper = styled(Box)`
   ${Headline} + ${Body},
@@ -21,7 +21,8 @@ const Wrapper = styled(Box)`
     margin-top: ${props => props.theme.space[2]}px
   }
 
-  ${Body} + ${Headline} {
+  ${Body} + ${Headline},
+  ${Figure} + ${Figure} {
     margin-top: ${props => props.theme.space[4]}px
   }
 

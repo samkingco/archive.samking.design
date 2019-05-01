@@ -9,7 +9,7 @@ const Figure = styled(
     <Box as="figure" {...props}>
       <Image src={src} srcSet={srcSet} sizes={sizes} alt={alt} ratio={ratio} />
       {caption && (
-        <Caption as="figcaption" color="textAlt" textAlign="right">
+        <Caption as="figcaption" color="textAlt" textAlign="right" mt={1}>
           {caption}
         </Caption>
       )}
