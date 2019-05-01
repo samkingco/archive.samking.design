@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import theme from '../design-system/theme';
 
 const ActiveThemeContext = React.createContext();
@@ -22,12 +22,6 @@ export const ActiveThemeProvider = ({ defaultMode, ...props }) => {
   const setTheme = mode => {
     setMode(modeNames.includes(mode) ? mode : defaultMode);
   };
-
-  useEffect(() => {
-    if (activeTheme.colors && activeTheme.colors.bg) {
-      document.body.style.backgroundColor = activeTheme.colors.bg;
-    }
-  }, [activeTheme]);
 
   const value = {
     mode,

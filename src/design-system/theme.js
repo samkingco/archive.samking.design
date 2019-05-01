@@ -44,6 +44,8 @@ export const modes = {
     textAlt: baseColors.greyOnWhite,
     accent: baseColors.red,
     accentAlt: baseColors.redAlt,
+    selectionBg: baseColors.red,
+    selectionFg: baseColors.black,
   },
   dark: {
     bg: baseColors.black,
@@ -52,6 +54,8 @@ export const modes = {
     textAlt: baseColors.greyOnBlack,
     accent: baseColors.red,
     accentAlt: baseColors.redAlt,
+    selectionBg: baseColors.red,
+    selectionFg: baseColors.white,
   },
   red: {
     bg: baseColors.red,
@@ -60,6 +64,8 @@ export const modes = {
     textAlt: baseColors.blackAltAlpha,
     accent: baseColors.white,
     accentAlt: baseColors.whiteAltAlpha,
+    selectionBg: baseColors.white,
+    selectionFg: baseColors.black,
   },
 };
 

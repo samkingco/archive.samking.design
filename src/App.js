@@ -8,6 +8,8 @@ import Footer from './components/Footer';
 import {
   GlobalStyle,
   GlobalFonts,
+  GlobalBackground,
+  GlobalSelection,
   LoadingIndicator,
   Flex,
 } from './design-system';
@@ -29,6 +31,12 @@ function AppContent() {
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         <GlobalFonts />
+        <GlobalBackground color={theme.colors.bg} />
+        <GlobalSelection
+          selectionBg={theme.colors.selectionBg}
+          selectionFg={theme.colors.selectionFg}
+        />
+
         <Flex flexDirection="column" minHeight="100vh">
           <Header />
           <React.Suspense
