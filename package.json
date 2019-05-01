@@ -3,13 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build:content": "echo \"Use runjs command: 'npx run build:content'\"",
-    "start": "echo \"Use runjs command: 'npx run start'\"",
-    "stage": "echo \"Use runjs command: 'npx run build:site dev'\"",
-    "build": "echo \"Use runjs command: 'npx run build:site'\"",
-    "analyze": "echo \"Use runjs command: 'npx run analyze'\"",
-    "serve": "echo \"Use runjs command: 'npx run serve'\"",
-    "serve:images": "echo \"Use runjs command: 'npx run serveImages'\""
+    "task": "node ./tasksfile.js"
   },
   "dependencies": {
     "@emotion/core": "^10.0.10",
@@ -43,9 +37,9 @@
     "nodemon": "^1.18.11",
     "prettier": "^1.16.4",
     "remark": "^10.0.1",
-    "runjs": "^4.4.2",
     "serve": "10.1.2",
     "sharp": "^0.20.5",
+    "tasksfile": "^5.1.0",
     "yamljs": "^0.3.0",
     "yargs": "^13.2.2"
   }

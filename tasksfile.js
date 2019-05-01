@@ -1,4 +1,4 @@
-const { run } = require('runjs');
+const { sh, cli } = require('tasksfile');
 const pkg = require('./package.json');
 
 const envMap = {
@@ -26,7 +26,7 @@ const IMAGE_BASE_URLS = {
   local: `http://localhost:${PORTS.IMAGE_SERVER}`,
 };
 
-function buildContent(stage = 'prod') {
+function buildContent(_, stage = 'prod') {
   console.log(`Building ${pkg.name} content for ${envMap[stage]}`);
 
   const env = [
@@ -34,27 +34,27 @@ function buildContent(stage = 'prod') {
     `APP_IMAGE_BASE_URLS=${IMAGE_BASE_URLS[stage]}`,
   ];
 
-  run(`${env.join(' ')} node ${PATHS.bin}/build-content.js`);
+  sh(`${env.join(' ')} node ${PATHS.bin}/build-content.js`);
 }
 
 function start() {
   console.log(`Starting ${pkg.name} for ${envMap.dev}`);
-  run('react-static start');
+  sh('react-static start');
 }
 
-function buildSite(stage = 'prod') {
+function buildSite(_, stage = 'prod') {
   console.log(`Building ${pkg.name} for ${envMap[stage]}`);
-  run(`react-static build ${stage === 'dev' ? '--staging' : ''}`);
+  sh(`react-static build ${stage === 'dev' ? '--staging' : ''}`);
 }
 
 function analyze() {
   console.log(`Building ${pkg.name} for ${envMap.dev}`);
-  run('react-static build --analyze');
+  sh('react-static build --analyze');
 }
 
 function serve(port = PORTS.SERVE_DIST) {
   console.log(`Serving ${pkg.name}`);
-  run(`serve dist -p ${port}`);
+  sh(`serve dist -p ${port}`);
 }
 
 function serveImages() {
@@ -65,10 +65,10 @@ function serveImages() {
     `APP_IMAGES_DEST=${PATHS.imagesDest}`,
   ];
 
-  run(`${env.join(' ')} nodemon ${PATHS.bin}/image-server.js`);
+  sh(`${env.join(' ')} nodemon ${PATHS.bin}/image-server.js`);
 }
 
-module.exports = {
+cli({
   start,
   build: {
     all(stage) {
@@ -81,4 +81,4 @@ module.exports = {
   analyze,
   serve,
   serveImages,
-};
+});
