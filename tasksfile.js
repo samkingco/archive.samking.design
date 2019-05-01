@@ -77,6 +77,10 @@ cli({
     },
     content: buildContent,
     site: buildSite,
+    ci() {
+      buildContent('prod');
+      buildSite('prod');
+    },
   },
   analyze,
   serve,
