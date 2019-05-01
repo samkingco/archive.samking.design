@@ -2,7 +2,6 @@ import React from 'react';
 import { Router } from '@reach/router';
 import { Root, Routes } from 'react-static';
 import { ThemeProvider } from 'emotion-theming';
-import AutoScrollTop from './components/AutoScrollTop';
 import { ActiveThemeProvider, useTheme } from './components/ActiveTheme';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -12,6 +11,9 @@ import {
   LoadingIndicator,
   Flex,
 } from './design-system';
+import scrollHandler from './utils/scrollHandler';
+
+scrollHandler();
 
 const PageContent = ({ children }) => (
   <Flex flex="1" width="100%" justifyContent="center" alignItems="center">
@@ -24,7 +26,6 @@ function AppContent() {
 
   return (
     <Root>
-      <AutoScrollTop />
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         <GlobalFonts />
@@ -39,7 +40,7 @@ function AppContent() {
             }
           >
             <PageContent>
-              <Router>
+              <Router primary={false}>
                 <Routes path="*" />
               </Router>
             </PageContent>
