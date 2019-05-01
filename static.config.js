@@ -22,7 +22,12 @@ export default {
         children: projects.map(project => ({
           path: `${project.slug}`,
           template: 'src/pages/Project',
-          getData: () => project,
+          getData: () => ({
+            ...project,
+            relatedProjects: projects
+              .filter(p => p.slug !== project.slug)
+              .map(({ content, ...project }) => project),
+          }),
         })),
       },
     ];

@@ -12,6 +12,8 @@ import {
   Caption,
 } from '../design-system';
 import ContentNode from '../components/ContentNode';
+import ProjectPreview from '../components/ProjectPreview';
+import RelatedProjects from '../components/RelatedProjects';
 
 const Wrapper = styled(Box)`
   ${Headline} + ${Body},
@@ -32,7 +34,15 @@ const Wrapper = styled(Box)`
 `;
 
 function Project() {
-  const { title, intro, date, myRole, cover, content } = useRouteData();
+  const {
+    title,
+    intro,
+    date,
+    myRole,
+    cover,
+    content,
+    relatedProjects,
+  } = useRouteData();
 
   const textGridColumn = [
     '1 / span 8',
@@ -102,6 +112,13 @@ function Project() {
             )}
           />
         ))}
+
+        <RelatedProjects
+          projects={relatedProjects}
+          as="footer"
+          gridColumn="1 / span 8"
+          mt={5}
+        />
       </Grid>
     </Wrapper>
   );
