@@ -10,7 +10,7 @@ function Index() {
   const yearsExperience = new Date().getFullYear() - 2012;
 
   return (
-    <Box as="main" role="main" px={[1, 2]} maxWidth="70em" mx="auto">
+    <Box as="main" role="main" px={[1, 2]} py={5} maxWidth="70em" mx="auto">
       <Grid
         as="section"
         aria-label="About me"

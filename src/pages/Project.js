@@ -53,7 +53,7 @@ function Project() {
   ];
 
   return (
-    <Wrapper as="main" role="main" px={[1, 2]} maxWidth="70em" mx="auto">
+    <Wrapper as="main" role="main" px={[1, 2]} py={5} maxWidth="70em" mx="auto">
       <Grid as="article" gridTemplateColumns="repeat(8, 1fr)">
         <Box as="hgroup" gridColumn={textGridColumn} mb={5}>
           <Title mb={3}>{title}</Title>

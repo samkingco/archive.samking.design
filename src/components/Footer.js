@@ -2,12 +2,12 @@ import React from 'react';
 import { useSiteData } from 'react-static';
 import { Box, Caption, Link } from '../design-system';
 
-function Header() {
+function Footer(props) {
   const { version, github, repo } = useSiteData();
   const year = new Date().getFullYear();
 
   return (
-    <Box as="footer" role="contentinfo" px={[1, 2]} pb={[1, 2]} mt={5}>
+    <Box as="footer" role="contentinfo" px={[1, 2]} pb={[1, 2]} {...props}>
       <Caption display="block" textAlign="right" color="textAlt">
         <Link to={`${github}/${repo}`}>v{version}</Link> • Content &copy; {year}{' '}
         Sam King
@@ -16,4 +16,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default Footer;
