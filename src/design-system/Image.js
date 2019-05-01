@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import styled from '@emotion/styled';
 import Box from './Box';
 import useIntersectionObserver from '../hooks/useIntersectionObserver';
@@ -36,6 +36,7 @@ const Image = ({
   ...props
 }) => {
   const wrapperRef = useRef(null);
+  const [hasLoaded, setHasLoaded] = useState(false);
   const [isInView] = useIntersectionObserver(wrapperRef, {
     threshold: 0,
     rootMargin: '50%',
@@ -56,8 +57,18 @@ const Image = ({
   };
 
   return (
-    <ImgWrapper ref={wrapperRef} {...props}>
-      <Img {...imgProps} sizes={sizes} alt={alt} />
+    <ImgWrapper
+      ref={wrapperRef}
+      bg={hasLoaded ? 'transparent' : 'bgAlt'}
+      {...props}
+    >
+      <Img
+        {...imgProps}
+        sizes={sizes}
+        alt={alt}
+        onLoad={() => setHasLoaded(true)}
+        opacity={hasLoaded ? 1 : 0}
+      />
     </ImgWrapper>
   );
 };
