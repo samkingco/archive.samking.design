@@ -6,7 +6,7 @@ function RelatedProjects({ projects, ...props }) {
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   return (
-    <Grid gridTemplateColumns="repeat(11, 1fr)" {...props}>
+    <Grid gridTemplateColumns="repeat(8, 1fr)" {...props}>
       {projects.map((project, index) => (
         <ProjectPreview
           key={project.slug}
@@ -15,13 +15,8 @@ function RelatedProjects({ projects, ...props }) {
           byline={project.byline}
           date={project.date}
           role="listitem"
-          gridColumn={[
-            '1 / span 11',
-            '3 / span 7',
-            `${index % 2 === 0 ? '1' : '7'} / span 5`,
-            `${index % 2 === 0 ? '2' : '7'} / span 4`,
-          ]}
-          mb={[index === projects.length - 1 ? 0 : 4, null, 0]}
+          gridColumn={['1 / span 8', '2 / span 6', '3 / span 4']}
+          mb={index === projects.length - 1 ? 0 : 4}
           borderColor={hoveredIndex === index ? 'accent' : 'text'}
           onMouseEnter={() => setHoveredIndex(index)}
           onMouseLeave={() => setHoveredIndex(null)}
