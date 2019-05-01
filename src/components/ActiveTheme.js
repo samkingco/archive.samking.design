@@ -1,39 +1,44 @@
 import React, { useState, useEffect, useContext } from 'react';
-import themes from '../design-system/theme';
+import theme from '../design-system/theme';
 
 const ActiveThemeContext = React.createContext();
-export const useActiveTheme = () => useContext(ActiveThemeContext);
+export const useTheme = () => useContext(ActiveThemeContext);
 
-export const ActiveThemeProvider = ({ defaultThemeName, ...props }) => {
-  const themeNames = Object.keys(themes);
-  const [themeName, setThemeName] = useState(defaultThemeName);
-  const theme = themes[themeName];
+function getTheme(mode, defaultMode) {
+  const colors =
+    theme.colors.modes[mode] || theme.colors.modes[defaultMode] || theme.colors;
 
-  const setActiveTheme = themeName => {
-    if (themeNames.includes(themeName)) {
-      setThemeName(themeName);
-    } else {
-      console.error('Invalid theme to switch to.');
-    }
+  return {
+    ...theme,
+    colors,
+  };
+}
+
+export const ActiveThemeProvider = ({ defaultMode, ...props }) => {
+  const modeNames = Object.keys(theme.colors.modes);
+  const [mode, setMode] = useState(defaultMode);
+  const activeTheme = getTheme(mode, defaultMode);
+
+  const setTheme = mode => {
+    setMode(modeNames.includes(mode) ? mode : defaultMode);
   };
 
   useEffect(() => {
-    if (theme.colors && theme.colors.bg) {
-      document.body.style.backgroundColor = theme.colors.bg;
+    if (activeTheme.colors && activeTheme.colors.bg) {
+      document.body.style.backgroundColor = activeTheme.colors.bg;
     }
-  }, [theme]);
+  }, [activeTheme]);
 
   const value = {
-    themes,
-    themeNames,
-    activeTheme: theme,
-    activeThemeName: themeName,
-    setActiveTheme,
+    mode,
+    modeNames,
+    theme: activeTheme,
+    setTheme,
   };
 
   return <ActiveThemeContext.Provider {...props} value={value} />;
 };
 
 ActiveThemeProvider.defaultProps = {
-  defaultThemeName: 'light',
+  defaultMode: 'light',
 };

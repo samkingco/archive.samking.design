@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useRouteData } from 'react-static';
 import styled from '@emotion/styled';
 import {
@@ -12,8 +12,8 @@ import {
   Caption,
 } from '../design-system';
 import ContentNode from '../components/ContentNode';
-import ProjectPreview from '../components/ProjectPreview';
 import RelatedProjects from '../components/RelatedProjects';
+import { useTheme } from '../components/ActiveTheme';
 
 const Wrapper = styled(Box)`
   ${Headline} + ${Body},
@@ -43,6 +43,12 @@ function Project() {
     content,
     relatedProjects,
   } = useRouteData();
+
+  const { setTheme } = useTheme();
+
+  useEffect(() => {
+    setTheme('dark');
+  }, []);
 
   const textGridColumn = [
     '1 / span 8',

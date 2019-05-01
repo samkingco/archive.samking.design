@@ -34,29 +34,30 @@ export const baseColors = {
   redAlt: '#E03F3F',
 };
 
-export const colorsDark = {
-  bg: baseColors.black,
-  bgAlt: baseColors.blackAlt,
-  fg: baseColors.white,
-  fgAlt: baseColors.greyOnBlack,
-  text: baseColors.white,
-  textAlt: baseColors.greyOnBlack,
-  accent: baseColors.red,
-  accentAlt: baseColors.redAlt,
+export const modes = {
+  light: {
+    bg: baseColors.white,
+    bgAlt: baseColors.whiteAlt,
+    fg: baseColors.black,
+    fgAlt: baseColors.greyOnWhite,
+    text: baseColors.black,
+    textAlt: baseColors.greyOnWhite,
+    accent: baseColors.red,
+    accentAlt: baseColors.redAlt,
+  },
+  dark: {
+    bg: baseColors.black,
+    bgAlt: baseColors.blackAlt,
+    fg: baseColors.white,
+    fgAlt: baseColors.greyOnBlack,
+    text: baseColors.white,
+    textAlt: baseColors.greyOnBlack,
+    accent: baseColors.red,
+    accentAlt: baseColors.redAlt,
+  },
 };
 
-export const colorsLight = {
-  bg: baseColors.white,
-  bgAlt: baseColors.whiteAlt,
-  fg: baseColors.black,
-  fgAlt: baseColors.greyOnWhite,
-  text: baseColors.black,
-  textAlt: baseColors.greyOnWhite,
-  accent: baseColors.red,
-  accentAlt: baseColors.redAlt,
-};
-
-const defaultTheme = {
+const theme = {
   breakpoints,
   space,
   fonts,
@@ -65,17 +66,10 @@ const defaultTheme = {
   lineHeights,
   letterSpacings,
   borders,
-};
-
-const themes = {
-  light: {
-    ...defaultTheme,
-    colors: colorsLight,
-  },
-  dark: {
-    ...defaultTheme,
-    colors: colorsDark,
+  colors: {
+    ...modes.light,
+    modes,
   },
 };
 
-export default themes;
+export default theme;

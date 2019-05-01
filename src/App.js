@@ -2,8 +2,8 @@ import React from 'react';
 import { Router } from '@reach/router';
 import { Root, Routes } from 'react-static';
 import { ThemeProvider } from 'emotion-theming';
-import { ActiveThemeProvider, useActiveTheme } from './components/ActiveTheme';
 import AutoScrollTop from './components/AutoScrollTop';
+import { ActiveThemeProvider, useTheme } from './components/ActiveTheme';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import {
@@ -14,12 +14,12 @@ import {
 } from './design-system';
 
 function AppContent() {
-  const { activeTheme } = useActiveTheme();
+  const { theme } = useTheme();
 
   return (
     <Root>
-      <ThemeProvider theme={activeTheme}>
       <AutoScrollTop />
+      <ThemeProvider theme={theme}>
         <GlobalStyle />
         <GlobalFonts />
         <Flex flexDirection="column" minHeight="100vh">

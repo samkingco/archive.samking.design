@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSiteData, useRouteData } from 'react-static';
+import { useTheme } from '../components/ActiveTheme';
 import { Box, Grid, Headline, Body, Link } from '../design-system';
 import ProjectPreviewList from '../components/ProjectPreviewList';
 import JobList from '../components/JobList';
@@ -7,6 +8,12 @@ import JobList from '../components/JobList';
 function Index() {
   const { email, github } = useSiteData();
   const { projects, history } = useRouteData();
+  const { setTheme } = useTheme();
+
+  useEffect(() => {
+    setTheme('light');
+  }, []);
+
   const yearsExperience = new Date().getFullYear() - 2012;
 
   return (
