@@ -18,7 +18,7 @@ content: |
 
   ## Spot list
 
-  When I travel, I usually have a huge list of things I want to see. I wanted a nice way of keeping track of all the places I planned on visiting, and what I actually got round to doing. I built a very basic version on the plane to New York using Underscore templates. When I got home, I improved the design, but never got round to building the newer version. I also took a lot of inspiration from [Rizon](/design/rizon) in terms of colour palette and overall style.
+  When I travel, I usually have a huge list of things I want to see. I wanted a nice way of keeping track of all the places I planned on visiting, and what I actually got round to doing. I built a very basic version on the plane to New York using Underscore templates. When I got home, I improved the design, but never got round to building the newer version. I also took a lot of inspiration from [Rizon](/rizon) in terms of colour palette and overall style.
 
   ![Spot list that was built on the plane](sandbox/spots-1.png "The version that I made on the plane and used for my trip")
 
