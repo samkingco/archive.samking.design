@@ -33,7 +33,7 @@ export default {
     ];
 
     const notfoundRoute = {
-      path: '*',
+      path: '404',
       template: 'src/pages/NotFound',
     };
 

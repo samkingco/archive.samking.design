@@ -25,8 +25,10 @@ export const borders = [
 export const baseColors = {
   black: '#000000',
   blackAlt: '#141414',
+  blackAltAlpha: 'rgba(0, 0, 0, 0.48)',
   white: '#ffffff',
   whiteAlt: '#EBEBEB',
+  whiteAltAlpha: 'rgba(255, 255, 255, 0.48)',
   grey: '#808080',
   greyOnBlack: '#A3A3A3',
   greyOnWhite: '#5C5C5C',
@@ -50,6 +52,14 @@ export const modes = {
     textAlt: baseColors.greyOnBlack,
     accent: baseColors.red,
     accentAlt: baseColors.redAlt,
+  },
+  red: {
+    bg: baseColors.red,
+    bgAlt: baseColors.redAlt,
+    text: baseColors.black,
+    textAlt: baseColors.blackAltAlpha,
+    accent: baseColors.white,
+    accentAlt: baseColors.whiteAltAlpha,
   },
 };
 
