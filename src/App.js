@@ -3,6 +3,7 @@ import { Router } from '@reach/router';
 import { Root, Routes } from 'react-static';
 import { ThemeProvider } from 'emotion-theming';
 import { ActiveThemeProvider, useActiveTheme } from './components/ActiveTheme';
+import AutoScrollTop from './components/AutoScrollTop';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import {
@@ -11,9 +12,6 @@ import {
   LoadingIndicator,
   Flex,
 } from './design-system';
-import scrollHandler from './utils/scrollHandler';
-
-scrollHandler();
 
 function AppContent() {
   const { activeTheme } = useActiveTheme();
@@ -21,6 +19,7 @@ function AppContent() {
   return (
     <Root>
       <ThemeProvider theme={activeTheme}>
+      <AutoScrollTop />
         <GlobalStyle />
         <GlobalFonts />
         <Flex flexDirection="column" minHeight="100vh">
