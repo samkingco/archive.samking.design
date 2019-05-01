@@ -36,6 +36,7 @@ const Wrapper = styled(Box)`
 
 function Project() {
   const {
+    slug,
     title,
     intro,
     date,
@@ -48,8 +49,8 @@ function Project() {
   const { setTheme } = useTheme();
 
   useEffect(() => {
-    setTheme('dark');
-  }, []);
+    setTheme(slug);
+  }, [slug]);
 
   const textGridColumn = [
     '1 / span 8',

@@ -67,6 +67,36 @@ export const modes = {
     selectionBg: baseColors.white,
     selectionFg: baseColors.black,
   },
+  lyst: {
+    bg: baseColors.white,
+    bgAlt: baseColors.whiteAlt,
+    text: baseColors.black,
+    textAlt: baseColors.blackAltAlpha,
+    accent: '#0831F5',
+    accentAlt: '#0831F5',
+    selectionBg: '#0831F5',
+    selectionFg: baseColors.white,
+  },
+  rizon: {
+    bg: '#151719',
+    bgAlt: '#272D34',
+    text: baseColors.white,
+    textAlt: baseColors.whiteAltAlpha,
+    accent: '#FF4700',
+    accentAlt: '#FF6C33',
+    selectionBg: '#FF4700',
+    selectionFg: baseColors.white,
+  },
+  sandbox: {
+    bg: '#F1F2F4',
+    bgAlt: '#FCFDFF',
+    text: '#282B2F',
+    textAlt: baseColors.blackAltAlpha,
+    accent: '#52667A',
+    accentAlt: '#282B2F',
+    selectionBg: '#52667A',
+    selectionFg: baseColors.white,
+  },
 };
 
 const theme = {
