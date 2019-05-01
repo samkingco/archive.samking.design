@@ -11,7 +11,7 @@ function Index() {
   const { setTheme } = useTheme();
 
   useEffect(() => {
-    setTheme('dark');
+    setTheme('red');
   }, []);
 
   const yearsExperience = new Date().getFullYear() - 2012;
