@@ -13,6 +13,12 @@ import {
   Flex,
 } from './design-system';
 
+const PageContent = ({ children }) => (
+  <Flex flex="1" width="100%" justifyContent="center" alignItems="center">
+    {children}
+  </Flex>
+);
+
 function AppContent() {
   const { theme } = useTheme();
 
@@ -27,19 +33,16 @@ function AppContent() {
           <React.Suspense
             maxDuration={250}
             fallback={
-              <Flex
-                flex="1"
-                width="100%"
-                justifyContent="center"
-                alignItems="center"
-              >
+              <PageContent>
                 <LoadingIndicator />
-              </Flex>
+              </PageContent>
             }
           >
-            <Router>
-              <Routes path="*" />
-            </Router>
+            <PageContent>
+              <Router>
+                <Routes path="*" />
+              </Router>
+            </PageContent>
             <Footer />
           </React.Suspense>
         </Flex>
