@@ -4,6 +4,7 @@ import { Box, Headline, Body, Grid, Link, Flex } from '../design-system';
 function ProjectPreview({
   slug,
   title,
+  byline,
   intro,
   date,
   myRole,
@@ -19,38 +20,52 @@ function ProjectPreview({
       border={2}
       borderColor={borderColor}
     >
-      <Box borderBottom={2} borderColor={borderColor} p={2}>
-        <Flex justifyContent="space-between" alignItems="center" mb={1}>
+      <Box p={2}>
+        <Flex justifyContent="space-between" alignItems="center">
           <Headline as="h3" aria-label={`Project name: ${title}`}>
             {title}
           </Headline>
           <Headline>→</Headline>
         </Flex>
-        <Body aria-label="About:">{intro}</Body>
+
+        {(intro || byline) && (
+          <Body aria-label="About:" mt={1}>
+            {intro || byline}
+          </Body>
+        )}
       </Box>
 
-      <Grid gridTemplateColumns="repeat(6, 1fr)">
-        <Body
-          aria-label="Date:"
-          gridColumn={['1 / span 6', null, '1 / span 2']}
-          py={1}
-          px={2}
+      {date && (
+        <Grid
+          borderTop={2}
           borderColor={borderColor}
+          gridTemplateColumns="repeat(6, 1fr)"
         >
-          {date}
-        </Body>
-        <Body
-          aria-label="My role:"
-          gridColumn={['1 / span 6', null, '3 / span 4']}
-          py={1}
-          px={2}
-          borderTop={[2, null, 0]}
-          borderLeft={[0, null, 2]}
-          borderColor={[borderColor, null, borderColor]}
-        >
-          {myRole}
-        </Body>
-      </Grid>
+          <Body
+            aria-label="Date:"
+            gridColumn={
+              myRole ? ['1 / span 6', null, '1 / span 2'] : '1 / span 6'
+            }
+            py={1}
+            px={2}
+          >
+            {date}
+          </Body>
+          {myRole && (
+            <Body
+              aria-label="My role:"
+              gridColumn={['1 / span 6', null, '3 / span 4']}
+              py={1}
+              px={2}
+              borderTop={[2, null, 0]}
+              borderLeft={[0, null, 2]}
+              borderColor={[borderColor, null, borderColor]}
+            >
+              {myRole}
+            </Body>
+          )}
+        </Grid>
+      )}
     </Link>
   );
 }
