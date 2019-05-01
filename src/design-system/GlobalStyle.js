@@ -21,6 +21,10 @@ export function GlobalStyle() {
           padding: 0;
           min-height: 100%;
         }
+
+        body {
+          transition: background-color 150ms ease-in-out;
+        }
       `}
     />
   );

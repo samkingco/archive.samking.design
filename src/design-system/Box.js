@@ -29,12 +29,18 @@ import {
   gridArea,
 } from 'styled-system';
 
+const transitions = [
+  'color 150ms ease-in-out',
+  'border-color 150ms ease-in-out',
+  'background 150ms ease-in-out',
+  'transform 150ms ease-in-out',
+];
+
 const Box = styled('div', {
   shouldForwardProp,
 })(
   {
-    transition:
-      'color 150ms ease-in-out, border-color 150ms ease-in-out, background 150ms ease-in-out, transform 150ms ease-in-out',
+    transition: transitions.join(','),
   },
   space,
   color,
