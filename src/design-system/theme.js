@@ -38,8 +38,6 @@ export const modes = {
   light: {
     bg: baseColors.white,
     bgAlt: baseColors.whiteAlt,
-    fg: baseColors.black,
-    fgAlt: baseColors.greyOnWhite,
     text: baseColors.black,
     textAlt: baseColors.greyOnWhite,
     accent: baseColors.red,
@@ -48,8 +46,6 @@ export const modes = {
   dark: {
     bg: baseColors.black,
     bgAlt: baseColors.blackAlt,
-    fg: baseColors.white,
-    fgAlt: baseColors.greyOnBlack,
     text: baseColors.white,
     textAlt: baseColors.greyOnBlack,
     accent: baseColors.red,

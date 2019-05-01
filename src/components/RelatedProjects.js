@@ -22,7 +22,7 @@ function RelatedProjects({ projects, ...props }) {
             `${index % 2 === 0 ? '2' : '7'} / span 4`,
           ]}
           mb={[index === projects.length - 1 ? 0 : 4, null, 0]}
-          borderColor={hoveredIndex === index ? 'accent' : 'fg'}
+          borderColor={hoveredIndex === index ? 'accent' : 'text'}
           onMouseEnter={() => setHoveredIndex(index)}
           onMouseLeave={() => setHoveredIndex(null)}
         />

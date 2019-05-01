@@ -21,7 +21,7 @@ const LoadingIndicator = styled(Box)(({ theme, speed }) => ({
     height: '100%',
     borderRadius: '50%',
     border: `2px solid ${theme.colors.bgAlt}`,
-    borderTopColor: theme.colors.fg,
+    borderTopColor: theme.colors.text,
     animation: `${spin} ${speed} linear infinite`,
   },
 }));
