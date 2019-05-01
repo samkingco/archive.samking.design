@@ -17,7 +17,7 @@ function RelatedProjects({ projects, ...props }) {
           role="listitem"
           gridColumn={['1 / span 8', '2 / span 6', '3 / span 4']}
           mb={index === projects.length - 1 ? 0 : 4}
-          borderColor={hoveredIndex === index ? 'accent' : 'text'}
+          borderColor={hoveredIndex === index ? 'accent' : 'bgAlt'}
           onMouseEnter={() => setHoveredIndex(index)}
           onMouseLeave={() => setHoveredIndex(null)}
         />

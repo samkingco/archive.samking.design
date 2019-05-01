@@ -24,7 +24,7 @@ function ProjectPreviewList({ projects, ...props }) {
             '2 / span 6',
           ]}
           mb={index !== projects.length - 1 ? 4 : 0}
-          borderColor={hoveredIndex === index ? 'accent' : 'text'}
+          borderColor={hoveredIndex === index ? 'text' : 'bgAlt'}
           onMouseEnter={() => setHoveredIndex(index)}
           onMouseLeave={() => setHoveredIndex(null)}
         />
