@@ -1,38 +1,10 @@
 import React, { useEffect } from 'react';
 import { useRouteData } from 'react-static';
-import styled from '@emotion/styled';
-import {
-  Box,
-  Title,
-  Body,
-  Figure,
-  Headline,
-  Link,
-  Grid,
-  Caption,
-} from '../design-system';
+import { Box, Figure, Grid } from '../design-system';
 import { useTheme } from '../components/ActiveTheme';
-import ContentNode from '../components/ContentNode';
+import ProjectHeader from '../components/ProjectHeader';
+import ProjectContent from '../components/ProjectContent';
 import RelatedProjects from '../components/RelatedProjects';
-
-const ProjectContent = styled(Grid)`
-  ${Headline} + ${Body},
-  ${Body} + ${Body} {
-    margin-top: ${props => props.theme.space[2]}px
-  }
-
-  ${Body} + ${Headline},
-  ${Figure} + ${Figure} {
-    margin-top: ${props => props.theme.space[4]}px
-  }
-
-  ${Figure} + ${Headline},
-  ${Figure} + ${Body},
-  ${Headline} + ${Figure},
-  ${Body} + ${Figure} {
-    margin-top: ${props => props.theme.space[5]}px
-  }
-`;
 
 function Project() {
   const {
@@ -53,13 +25,6 @@ function Project() {
     setTheme(slug);
   }, [slug]);
 
-  const textGridColumn = [
-    '1 / span 8',
-    '2 / span 7',
-    '2 / span 6',
-    '2 / span 5',
-    '3 / span 4',
-  ];
 
   return (
     <Box
@@ -71,23 +36,22 @@ function Project() {
       mx="auto"
     >
       <Grid as="article" gridTemplateColumns="repeat(8, 1fr)">
-        <Box as="hgroup" gridColumn={textGridColumn} mb={5}>
-          <Title mb={2}>{title}</Title>
-          <Body mb={3}>{intro}</Body>
-          <Caption as="p" color="textAlt">
-            <Box as="span" display={['block', null, 'inline-block']} mr={3}>
-              {date}
-            </Box>
-            <Box as="span" display={['block', null, 'inline-block']} mr={3}>
-              {roles.map(role => `${role}`).join(', ')}
-            </Box>
-            {link && (
-              <Box as="span" display={['block', null, 'inline-block']}>
-                <Link to={link.url}>{link.text}</Link>
-              </Box>
-            )}
-          </Caption>
-        </Box>
+        <ProjectHeader
+          title={title}
+          intro={intro}
+          date={date}
+          roles={roles}
+          link={link}
+          as="hgroup"
+          gridColumn={[
+            '1 / span 8',
+            '2 / span 7',
+            '2 / span 6',
+            '2 / span 5',
+            '3 / span 4',
+          ]}
+          mb={5}
+        />
 
         <Figure
           src={cover.src}
@@ -99,51 +63,7 @@ function Project() {
           mb={5}
         />
 
-        <ProjectContent
-          gridColumn="1 / span 8"
-          gridTemplateColumns="repeat(8, 1fr)"
-        >
-          {content.map((node, index) => (
-            <ContentNode
-              key={`${node.type}.${index}`}
-              node={node}
-              h1={({ children }) => (
-                <Headline as="h1" gridColumn={textGridColumn}>
-                  {children}
-                </Headline>
-              )}
-              h2={({ children }) => (
-                <Headline as="h2" gridColumn={textGridColumn}>
-                  {children}
-                </Headline>
-              )}
-              h3={({ children }) => (
-                <Headline as="h3" gridColumn={textGridColumn}>
-                  {children}
-                </Headline>
-              )}
-              p={({ children }) => (
-                <Body gridColumn={textGridColumn}>{children}</Body>
-              )}
-              a={({ children, href }) => <Link to={href}>{children}</Link>}
-              img={({ src, alt, caption, ratio }) => (
-                <Figure
-                  src={src}
-                  alt={alt}
-                  caption={caption}
-                  ratio={ratio}
-                  gridColumn={[
-                    '1 / span 8',
-                    null,
-                    '2 / span 7',
-                    null,
-                    '2 / span 6',
-                  ]}
-                />
-              )}
-            />
-          ))}
-        </ProjectContent>
+        <ProjectContent content={content} gridColumn="1 / span 8" />
 
         <RelatedProjects
           projects={relatedProjects}
