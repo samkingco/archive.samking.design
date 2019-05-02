@@ -1,7 +1,7 @@
 const path = require('path');
 const Koa = require('koa');
 const KoaRouter = require('koa-router');
-const sharp = require('sharp');
+const jimp = require('jimp');
 
 const { PORT = 4000, APP_IMAGES_DEST } = process.env;
 
@@ -10,7 +10,7 @@ const router = new KoaRouter();
 
 const processImage = async ctx => {
   const { image } = ctx.params;
-  const { width } = ctx.query;
+  const { w } = ctx.query;
 
   const extension = path.extname(image);
 
@@ -21,15 +21,12 @@ const processImage = async ctx => {
 
   // This will be a mock of image lambda in terms of params and processing
   const imagePath = path.resolve(process.cwd(), APP_IMAGES_DEST, image);
-  const imageWidth = Number(width) || 2880;
+  const imageWidth = Number(w) || 2880;
 
-  const imageBuffer = await sharp(imagePath)
-    .resize(imageWidth, imageWidth)
-    .withoutEnlargement()
-    .max()
-    .toBuffer();
+  const img = await jimp.read(imagePath);
+  img.resize(imageWidth, jimp.AUTO);
 
-  ctx.body = imageBuffer;
+  ctx.body = await img.getBufferAsync(jimp.AUTO);
   ctx.type = `.${extension}`;
   ctx.status = 200;
 };

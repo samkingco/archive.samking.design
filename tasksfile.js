@@ -65,7 +65,9 @@ function serveImages() {
     `APP_IMAGES_DEST=${PATHS.imagesDest}`,
   ];
 
-  sh(`${env.join(' ')} nodemon ${PATHS.bin}/image-server.js`);
+  sh(`${env.join(' ')} nodemon ${PATHS.bin}/image-server.js`, {
+    async: true,
+  });
 }
 
 cli({
