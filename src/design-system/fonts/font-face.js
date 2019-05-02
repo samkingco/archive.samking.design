@@ -1,10 +1,3 @@
-import TextWoff from './Text.woff';
-import TextWoff2 from './Text.woff2';
-import TextBoldWoff from './TextBold.woff';
-import TextBoldWoff2 from './TextBold.woff2';
-import TextAltWoff from './TextAlt.woff';
-import TextAltWoff2 from './TextAlt.woff2';
-
 const generateFontFace = (
   name,
   srcs,
@@ -24,15 +17,18 @@ const generateFontFace = (
 const fontFace = `
   ${generateFontFace(
     'Text',
-    [{ url: TextWoff, format: 'woff' }, { url: TextWoff2, format: 'woff2' }],
+    [
+      { url: '/fonts/Text.woff', format: 'woff' },
+      { url: '/fonts/Text.woff2', format: 'woff2' },
+    ],
     'normal',
   )}
   
   ${generateFontFace(
     'Text',
     [
-      { url: TextBoldWoff, format: 'woff' },
-      { url: TextBoldWoff2, format: 'woff2' },
+      { url: '/fonts/TextBold.woff', format: 'woff' },
+      { url: '/fonts/TextBold.woff2', format: 'woff2' },
     ],
     'bold',
   )}
@@ -40,8 +36,8 @@ const fontFace = `
   ${generateFontFace(
     'TextAlt',
     [
-      { url: TextAltWoff, format: 'woff' },
-      { url: TextAltWoff2, format: 'woff2' },
+      { url: '/fonts/TextAlt.woff', format: 'woff' },
+      { url: '/fonts/TextAlt.woff2', format: 'woff2' },
     ],
     'bold',
   )}

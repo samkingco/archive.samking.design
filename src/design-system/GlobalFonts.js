@@ -1,12 +1,33 @@
 import React from 'react';
 import { Global, css } from '@emotion/core';
-import fontFace from './fonts/font-face';
 
 export function GlobalFonts() {
   return (
     <Global
       styles={css`
-        ${fontFace}
+        @font-face {
+          font-family: 'Text';
+          src: url('/fonts/Text.woff') format('woff'),
+            url('/fonts/Text.woff2') format('woff2');
+          font-style: normal;
+          font-weight: normal;
+        }
+
+        @font-face {
+          font-family: 'Text';
+          src: url('/fonts/TextBold.woff') format('woff'),
+            url('/fonts/TextBold.woff2') format('woff2');
+          font-style: normal;
+          font-weight: bold;
+        }
+
+        @font-face {
+          font-family: 'TextAlt';
+          src: url('/fonts/TextAlt.woff') format('woff'),
+            url('/fonts/TextAlt.woff2') format('woff2');
+          font-style: normal;
+          font-weight: bold;
+        }
       `}
     />
   );
