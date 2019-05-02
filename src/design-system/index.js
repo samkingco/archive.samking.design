@@ -2,8 +2,6 @@ export { default as theme } from './theme';
 
 export { default as GlobalStyle } from './GlobalStyle';
 export { default as GlobalFonts } from './GlobalFonts';
-export { default as GlobalBackground } from './GlobalBackground';
-export { default as GlobalSelection } from './GlobalSelection';
 
 export { default as Box } from './Box';
 export { default as Flex } from './Flex';

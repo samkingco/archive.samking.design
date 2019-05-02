@@ -1,7 +1,7 @@
 import React from 'react';
 import { Global, css } from '@emotion/core';
 
-export function GlobalStyle() {
+export function GlobalStyle({ bg, fg, selectionBg, selectionFg }) {
   return (
     <Global
       styles={css`
@@ -23,7 +23,14 @@ export function GlobalStyle() {
         }
 
         body {
+          background-color: ${bg};
+          color: ${fg};
           transition: background-color 150ms ease-in-out;
+        }
+
+        ::selection {
+          background-color: ${selectionBg};
+          color: ${selectionFg};
         }
       `}
     />
