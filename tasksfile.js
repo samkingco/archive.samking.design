@@ -39,7 +39,7 @@ function buildContent(_, stage = 'prod') {
 
 function start() {
   console.log(`Starting ${pkg.name} for ${envMap.dev}`);
-  sh('react-static start');
+  sh('react-static start', { async: true });
 }
 
 function buildSite(_, stage = 'prod') {
@@ -54,7 +54,7 @@ function analyze() {
 
 function serve(port = PORTS.SERVE_DIST) {
   console.log(`Serving ${pkg.name}`);
-  sh(`serve dist -p ${port}`);
+  sh(`serve dist -p ${port}`, { async: true });
 }
 
 function serveImages() {
@@ -65,9 +65,7 @@ function serveImages() {
     `APP_IMAGES_DEST=${PATHS.imagesDest}`,
   ];
 
-  sh(`${env.join(' ')} nodemon ${PATHS.bin}/image-server.js`, {
-    async: true,
-  });
+  sh(`${env.join(' ')} nodemon ${PATHS.bin}/image-server.js`, { async: true });
 }
 
 cli({
