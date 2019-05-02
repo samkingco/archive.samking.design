@@ -1,6 +1,6 @@
 import React from 'react';
 import { Router } from '@reach/router';
-import { Root, Routes } from 'react-static';
+import { Root, Routes, Head } from 'react-static';
 import { ThemeProvider } from 'emotion-theming';
 import { ActiveThemeProvider, useTheme } from './components/ActiveTheme';
 import Header from './components/Header';
@@ -23,9 +23,15 @@ const PageContent = ({ children }) => (
 
 function AppContent() {
   const { theme } = useTheme();
+  const title = 'Sam King—Designer';
 
   return (
     <Root>
+      <Head titleTemplate={`%s | ${title}`} defaultTitle={title}>
+        <meta property="og:title" content={title} />
+        <meta property="og:site_name" content="Sam King" />
+        <meta name="twitter:site" content="@samkingco" />
+      </Head>
       <ThemeProvider theme={theme}>
         <GlobalStyle {...theme.colors} />
         <GlobalFonts />
