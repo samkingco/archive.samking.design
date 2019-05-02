@@ -1,4 +1,6 @@
-version: 2
+version: 2.1
+orbs:
+  aws-s3: circleci/aws-s3@1.0.8
 jobs:
   build:
     docker:
@@ -20,3 +22,11 @@ jobs:
       - run:
           name: build
           command: npm run task -- build:ci
+      - aws-s3/sync:
+          from: content/dist/images
+          to: 's3://samkingco-imgix/design'
+          arguments: '--acl public-read'
+      - aws-s3/sync:
+          from: dist
+          to: 's3://samking.design'
+          arguments: '--acl public-read'
