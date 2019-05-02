@@ -9,8 +9,8 @@ function Footer(props) {
   return (
     <Box as="footer" role="contentinfo" px={[1, 2]} pb={[1, 2]} {...props}>
       <Caption display="block" textAlign="right" color="textAlt">
-        <Link to={`${github}/${repo}`}>v{version}</Link> • Content &copy; {year}{' '}
-        Sam King
+        <Link to={`https://github.com/${github}/${repo}`}>v{version}</Link> •
+        Content &copy; {year} Sam King
       </Caption>
     </Box>
   );

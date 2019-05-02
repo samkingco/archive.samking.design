@@ -7,8 +7,10 @@ export default {
   getSiteData: async () => ({
     version: pkg.version,
     email: 'mail@samking.co',
-    github: 'https://github.com/samisking',
+    twitter: 'samkingco',
+    github: 'samkingco',
     repo: 'samking.design',
+    location: '51.54579°N 0.05542°W',
   }),
   getRoutes: async () => {
     const projectRoutes = [
