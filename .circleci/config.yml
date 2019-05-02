@@ -28,12 +28,12 @@ jobs:
             - dist
   deploy:
     docker:
-      - image: circleci/python:2.7-jessie
+      - image: circleci/python:latest
     steps:
       - attach_workspace:
           at: ./
       - aws-s3/sync:
-          from: content/dist/images
+          from: images
           to: 's3://samkingco-imgix/design'
           arguments: '--acl public-read'
       - aws-s3/sync:
