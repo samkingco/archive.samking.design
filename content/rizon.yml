@@ -1,7 +1,11 @@
 title: Rizon
 date: 2014—Present
 byline: A golden hour calculator for iPhone
-myRole: Product design and development, iOS, marketing
+roles:
+  - Product
+  - Interface
+  - Branding
+  - Marketing
 intro: Figuring out when to take photos outdoors can be a real nightmare. Rizon is an app that alerts you when Golden Hour is approaching so you never miss out on that perfect light. It's currently available on the App Store and has had over 10k downloads since August 2015.
 cover: rizon/cover.jpg
 link:

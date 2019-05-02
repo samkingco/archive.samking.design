@@ -1,7 +1,10 @@
 title: Sandbox
 date: 2015—2017
 byline: Learning by making products for myself
-myRole: Product design and development, iOS
+roles:
+  - Product
+  - Interface
+  - Engineering
 intro: In my spare time, I like to make little products for myself. Usually they're just for learning, sometimes they're useful! Here's a couple of things I've made but not released in the last 18 months or so.
 cover: sandbox/cover.png
 content: |

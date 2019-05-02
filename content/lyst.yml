@@ -1,7 +1,11 @@
 title: Lyst
 date: 2014—2016
 byline: One of the worlds largest fashion aggregators
-myRole: Product design, front-end, marketing materials
+roles:
+  - Product
+  - Interface
+  - Engineering
+  - Marketing
 intro: Lyst is one of the biggest online fashion aggregators with over 11,000 designers & retailers and an inventory of millions.
 cover: lyst/cover.png
 link:
