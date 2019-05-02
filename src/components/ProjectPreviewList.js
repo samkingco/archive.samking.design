@@ -21,6 +21,7 @@ function ProjectPreviewList({ projects, ...props }) {
       {projects.map((project, index) => (
         <ProjectPreview
           {...project}
+          key={project.slug}
           nthChild={index + 1}
           mb={index === projects.length - 1 ? 0 : 5}
         />
