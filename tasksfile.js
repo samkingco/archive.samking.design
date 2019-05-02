@@ -52,7 +52,7 @@ function analyze() {
   sh('react-static build --analyze');
 }
 
-function serve(port = PORTS.SERVE_DIST) {
+function serve(_, port = PORTS.SERVE_DIST) {
   console.log(`Serving ${pkg.name}`);
   sh(`serve dist -p ${port}`, { async: true });
 }
