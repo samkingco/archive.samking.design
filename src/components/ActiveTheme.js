@@ -34,5 +34,5 @@ export const ActiveThemeProvider = ({ defaultMode, ...props }) => {
 };
 
 ActiveThemeProvider.defaultProps = {
-  defaultMode: 'dark',
+  defaultMode: 'light',
 };

@@ -55,7 +55,7 @@ function AppContent() {
 
 function App() {
   return (
-    <ActiveThemeProvider defaultThemeName="dark">
+    <ActiveThemeProvider>
       <AppContent />
     </ActiveThemeProvider>
   );
