@@ -3,7 +3,7 @@ import { useSiteData, useRouteData } from 'react-static';
 import { useTheme } from '../components/ActiveTheme';
 import { Box, Grid, Headline, Body, Link } from '../design-system';
 import ProjectPreviewList from '../components/ProjectPreviewList';
-import JobList from '../components/JobList';
+import JobHistory from '../components/JobHistory';
 
 function Index() {
   const { email, location, latlong, twitter } = useSiteData();
@@ -54,7 +54,6 @@ function Index() {
             website serves as a small showcase of work from the last few years,
             both personal and for startups. Open to new projects—hit me up.
           </Body>
-
           <Body>
             Email: <Link to={`mailto:${email}`}>{email}</Link>
           </Body>
@@ -79,8 +78,8 @@ function Index() {
         mb={[5, 6]}
       />
 
-      <JobList
-        jobs={history}
+      <JobHistory
+        history={history}
         as="section"
         role="list"
         aria-label="Job history"

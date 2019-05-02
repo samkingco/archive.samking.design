@@ -2,7 +2,7 @@ import React from 'react';
 import { Grid, Title } from '../design-system';
 import Job from './Job';
 
-function JobList({ jobs, ...props }) {
+function JobHistory({ history, ...props }) {
   return (
     <Grid gridTemplateColumns="repeat(8, 1fr)" {...props}>
       <Title
@@ -13,7 +13,7 @@ function JobList({ jobs, ...props }) {
         History
       </Title>
 
-      {jobs.map((job, index) => (
+      {history.map((job, index) => (
         <Job
           key={`${job.role}/${job.company}`}
           {...job}
@@ -25,11 +25,11 @@ function JobList({ jobs, ...props }) {
             '2 / span 5',
             '3 / span 4',
           ]}
-          mb={index !== jobs.length - 1 ? 4 : 0}
+          mb={index !== history.length - 1 ? 4 : 0}
         />
       ))}
     </Grid>
   );
 }
 
-export default JobList;
+export default JobHistory;
