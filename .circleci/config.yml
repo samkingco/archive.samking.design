@@ -33,7 +33,7 @@ jobs:
       - attach_workspace:
           at: ./
       - aws-s3/sync:
-          from: images
+          from: content/dist/images
           to: 's3://samkingco-imgix/design'
           arguments: '--acl public-read'
       - aws-s3/sync:
