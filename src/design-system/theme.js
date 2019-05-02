@@ -1,5 +1,5 @@
 const breakpoints = ['32em', '40em', '56em', '64em'];
-const space = [0, 8, 16, 24, 32, 64];
+const space = [0, 8, 16, 24, 32, 64, 128];
 
 export const fonts = {
   text: '"Text", -apple-system, Helvetica, sans-serif',

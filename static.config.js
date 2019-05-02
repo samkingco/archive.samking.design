@@ -10,7 +10,8 @@ export default {
     twitter: 'samkingco',
     github: 'samkingco',
     repo: 'samking.design',
-    location: '51.54579°N 0.05542°W',
+    location: 'London',
+    latlong: '51.54579°N 0.05542°W',
   }),
   getRoutes: async () => {
     const projectRoutes = [

@@ -1,75 +1,56 @@
-import React from 'react';
-import { Box, Headline, Body, Grid, Link } from '../design-system';
+import React, { useState } from 'react';
+import styled from '@emotion/styled';
+import { Headline, Body, Grid, Link, Image } from '../design-system';
 
-function ProjectPreview({
-  slug,
-  title,
-  byline,
-  intro,
-  date,
-  myRole,
-  borderColor,
-  ...props
-}) {
+const ProjectCover = styled(Image)(({ theme, isHovering }) => ({
+  filter: `grayscale(${isHovering ? '0' : '100%'})`,
+  transform: `translate3d(${isHovering ? `${theme.space[1]}px` : '0'}, 0, 0)`,
+  transition: 'filter 100ms ease-in-out, transform 150ms ease-in-out',
+}));
+
+function ProjectPreview({ slug, cover, title, intro, nthChild = 1, ...props }) {
+  const [isHovering, setIsHovering] = useState(false);
+  const isThird = nthChild % 3 === 0;
+  const isEven = nthChild % 2 === 0;
+
+  const projectGridColumn = [
+    '1 / span 8',
+    null,
+    `${isThird ? 2 : isEven ? 3 : 1} / span 6`,
+  ];
+
+  const projectGridTemplate = ['repeat(8, 1fr)', null, 'repeat(5, 1fr)'];
+  const imageGridColumn = ['1 / span 8', null, '1 / span 5'];
+  const textGridColumn = [
+    '1 / span 8',
+    '2 / span 7',
+    `${isThird ? 2 : isEven ? 1 : 2} / span 4`,
+    `${isThird ? 3 : isEven ? 1 : 2} / span 3`,
+  ];
+
   return (
     <Link
+      key={slug}
       to={`/${slug}`}
-      {...props}
-      display="block"
+      gridColumn={projectGridColumn}
       shouldUnderline={false}
-      border={2}
-      borderColor={borderColor}
+      onMouseEnter={() => setIsHovering(true)}
+      onMouseLeave={() => setIsHovering(false)}
+      {...props}
     >
-      <Box p={2}>
-        <Headline
-          as="h3"
-          aria-label={`Project name: ${title}`}
-          display="flex"
-          justifyContent="space-between"
-          alignItems="center"
-        >
+      <Grid gridTemplateColumns={projectGridTemplate}>
+        <ProjectCover
+          src={cover.src}
+          ratio={cover.ratio}
+          gridColumn={imageGridColumn}
+          isHovering={isHovering}
+          mb={[2, null, 3]}
+        />
+        <Headline gridColumn={textGridColumn} mb={1}>
           {title}
-          <span aria-hidden="true"> →</span>
         </Headline>
-
-        {(intro || byline) && (
-          <Body aria-label="About:" mt={1}>
-            {intro || byline}
-          </Body>
-        )}
-      </Box>
-
-      {date && (
-        <Grid
-          borderTop={2}
-          borderColor={borderColor}
-          gridTemplateColumns="repeat(6, 1fr)"
-        >
-          <Body
-            aria-label="Date:"
-            gridColumn={
-              myRole ? ['1 / span 6', null, '1 / span 2'] : '1 / span 6'
-            }
-            py={1}
-            px={2}
-          >
-            {date}
-          </Body>
-          {myRole && (
-            <Body
-              aria-label="My role:"
-              gridColumn={['1 / span 6', null, '3 / span 4']}
-              py={1}
-              px={2}
-              borderTop={[2, null, 0]}
-              borderLeft={[0, null, 2]}
-              borderColor={[borderColor, null, borderColor]}
-            >
-              {myRole}
-            </Body>
-          )}
-        </Grid>
-      )}
+        <Body gridColumn={textGridColumn}>{intro}</Body>
+      </Grid>
     </Link>
   );
 }
