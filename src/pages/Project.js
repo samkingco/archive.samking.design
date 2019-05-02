@@ -75,14 +75,14 @@ function Project() {
           <Title mb={2}>{title}</Title>
           <Body mb={3}>{intro}</Body>
           <Caption as="p" color="textAlt">
-            <Box display={['block', null, 'inline-block']} mr={3}>
+            <Box as="span" display={['block', null, 'inline-block']} mr={3}>
               {date}
             </Box>
-            <Box display={['block', null, 'inline-block']} mr={3}>
+            <Box as="span" display={['block', null, 'inline-block']} mr={3}>
               {roles.map(role => `${role}`).join(', ')}
             </Box>
             {link && (
-              <Box display={['block', null, 'inline-block']}>
+              <Box as="span" display={['block', null, 'inline-block']}>
                 <Link to={link.url}>{link.text}</Link>
               </Box>
             )}
