@@ -5,7 +5,6 @@ jobs:
   build:
     docker:
       - image: circleci/node:latest
-    working_directory: ~/repo
     steps:
       - checkout
       - restore_cache:
@@ -22,11 +21,17 @@ jobs:
       - run:
           name: build
           command: npm run task -- build:ci
+      - persist_to_workspace:
+          root: ./
+          paths:
+            - content/dist/images
+            - dist
   deploy:
     docker:
       - image: circleci/python:2.7-jessie
-    working_directory: ~/repo
     steps:
+      - attach_workspace:
+          at: ./
       - aws-s3/sync:
           from: content/dist/images
           to: 's3://samkingco-imgix/design'
