@@ -1,17 +1,24 @@
 import React from 'react';
-import { Box, Headline, Body, Caption } from '../design-system';
+import { Flex, Headline, Body, Caption } from '../design-system';
 
 function Job({ date, title, company, about, ...props }) {
   return (
-    <Box {...props}>
-      <Caption aria-label="Date:" color="textAlt" mb={1} display="block">
-        {date}
-      </Caption>
-      <Headline as="h3" fontSize={1} mb={1}>
+    <Flex flexDirection="column" {...props}>
+      <Headline as="h3" fontSize={1} mb={1} order="2">
         {`${title}${company ? ` at ${company}` : ''}`}
       </Headline>
-      <Body>{about}</Body>
-    </Box>
+      <Caption
+        as="p"
+        aria-label="Date:"
+        color="textAlt"
+        mb={1}
+        display="block"
+        order="1"
+      >
+        {date}
+      </Caption>
+      <Body order="3">{about}</Body>
+    </Flex>
   );
 }
 

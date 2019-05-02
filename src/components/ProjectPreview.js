@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Headline, Body, Grid, Link, Flex } from '../design-system';
+import { Box, Headline, Body, Grid, Link } from '../design-system';
 
 function ProjectPreview({
   slug,
@@ -21,12 +21,16 @@ function ProjectPreview({
       borderColor={borderColor}
     >
       <Box p={2}>
-        <Flex justifyContent="space-between" alignItems="center">
-          <Headline as="h3" aria-label={`Project name: ${title}`}>
-            {title}
-          </Headline>
-          <Headline>→</Headline>
-        </Flex>
+        <Headline
+          as="h3"
+          aria-label={`Project name: ${title}`}
+          display="flex"
+          justifyContent="space-between"
+          alignItems="center"
+        >
+          {title}
+          <span aria-hidden="true"> →</span>
+        </Headline>
 
         {(intro || byline) && (
           <Body aria-label="About:" mt={1}>
