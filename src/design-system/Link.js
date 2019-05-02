@@ -4,10 +4,27 @@ import styled from '@emotion/styled';
 import BaseText from './BaseText';
 
 const StyledLink = styled(BaseText)(({ theme, shouldUnderline }) => ({
-  textDecoration: shouldUnderline ? 'underline' : 'none',
+  position: 'relative',
+  textDecoration: 'none',
+  outline: 'none',
   '&:hover': {
     color: theme.colors.accent,
-    textDecoration: shouldUnderline ? 'underline' : 'none',
+  },
+  '&:hover:after': {
+    width: 0,
+    left: '50%',
+  },
+  '&:after': {
+    content: '""',
+    position: 'absolute',
+    height: '1px',
+    width: '100%',
+    backgroundColor: 'currentColor',
+    left: 0,
+    bottom: '-2px',
+    transition:
+      'width 100ms ease-in-out, background-color 100ms ease-in-out, left 100ms ease-in-out',
+    opacity: shouldUnderline ? 1 : 0,
   },
 }));
 
