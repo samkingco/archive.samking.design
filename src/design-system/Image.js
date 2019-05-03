@@ -15,7 +15,14 @@ Img.defaultProps = {
 
 Img.displayName = 'Img';
 
+const NoScriptImg = styled(Img)({
+  position: 'absolute',
+  top: 0,
+  left: 0,
+});
+
 const ImgWrapper = styled(Box)(({ ratio }) => ({
+  position: 'relative',
   ...(ratio && {
     height: 0,
     paddingBottom: `${ratio * 100}%`,
@@ -69,6 +76,9 @@ const Image = ({
         onLoad={() => setHasLoaded(true)}
         opacity={hasLoaded ? 1 : 0}
       />
+      <noscript>
+        <NoScriptImg src={`${src}?w=${srcSetSizes[0]}`} alt={alt} />
+      </noscript>
     </ImgWrapper>
   );
 };
