@@ -59,7 +59,7 @@ const Image = ({
   return (
     <ImgWrapper
       ref={wrapperRef}
-      bg={hasLoaded ? 'transparent' : 'bgAlt'}
+      bg={hasLoaded ? 'transparent' : props.bg || 'bgAlt'}
       {...props}
     >
       <Img
