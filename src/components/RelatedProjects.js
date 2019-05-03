@@ -10,7 +10,7 @@ function RelatedProjects({ projects, ...props }) {
       {projects.map(({ slug, title, byline, date }, index) => (
         <Link
           key={slug}
-          to={`/${slug}`}
+          to={`/${slug}/`}
           role="listitem"
           shouldUnderline={false}
           border={2}

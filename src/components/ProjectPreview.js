@@ -16,7 +16,7 @@ function ProjectPreview({ slug, cover, title, intro, nthChild = 1, ...props }) {
   return (
     <Link
       key={slug}
-      to={`/${slug}`}
+      to={`/${slug}/`}
       gridColumn={[
         '1 / span 8',
         null,
