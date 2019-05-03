@@ -19,7 +19,7 @@ jobs:
             - node_modules
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
-          name: Build content and site
+          name: Build content and app
           command: npm run task -- build:ci
       - persist_to_workspace:
           root: ./
