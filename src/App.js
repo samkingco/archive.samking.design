@@ -22,7 +22,9 @@ function AppContent() {
   return (
     <Root>
       <Head titleTemplate={`%s | ${title}`} defaultTitle={title}>
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
         <meta property="og:title" content={title} />
+        <meta property="og:image" content="https://samking.design/logo.png" />
         <meta property="og:site_name" content="Sam King" />
         <meta name="twitter:site" content="@samkingco" />
       </Head>
