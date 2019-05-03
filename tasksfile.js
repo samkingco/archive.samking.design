@@ -44,7 +44,7 @@ function start() {
 
 function buildSite(_, stage = 'prod') {
   console.log(`Building ${pkg.name} for ${envMap[stage]}`);
-  sh(`react-static build ${stage === 'dev' ? '--staging' : ''}`);
+  sh('react-static build');
 }
 
 function analyze() {
@@ -71,16 +71,8 @@ function serveImages() {
 cli({
   start,
   build: {
-    all(_, stage) {
-      buildContent(stage);
-      buildSite(stage);
-    },
     content: buildContent,
     site: buildSite,
-    ci() {
-      buildContent('prod');
-      buildSite('prod');
-    },
   },
   analyze,
   serve,

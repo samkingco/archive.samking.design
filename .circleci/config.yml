@@ -19,8 +19,11 @@ jobs:
             - node_modules
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
-          name: Build content and app
-          command: npm run task -- build:ci
+          name: Build content
+          command: npm run task -- build:content
+      - run:
+          name: Build site
+          command: npm run task -- build:site
       - save_cache:
           key: dist-{{ .Environment.CIRCLE_BRANCH }}-{{ .Environment.CIRCLE_SHA1 }}
           paths:
