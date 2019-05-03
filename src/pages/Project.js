@@ -2,8 +2,8 @@ import React from 'react';
 import { useRouteData, Head } from 'react-static';
 import useTheme from '../hooks/useTheme';
 import { Box, Figure, Grid } from '../design-system';
-import ProjectHeader from '../components/ProjectHeader';
-import ProjectContent from '../components/ProjectContent';
+import ProjectPageHeader from '../components/ProjectPageHeader';
+import ProjectPageContent from '../components/ProjectPageContent';
 import RelatedProjects from '../components/RelatedProjects';
 
 function Project() {
@@ -50,7 +50,7 @@ function Project() {
         mx="auto"
       >
         <Grid as="article" gridTemplateColumns="repeat(8, 1fr)">
-          <ProjectHeader
+          <ProjectPageHeader
             title={title}
             intro={intro}
             date={date}
@@ -77,7 +77,7 @@ function Project() {
             mb={5}
           />
 
-          <ProjectContent content={content} gridColumn="1 / span 8" />
+          <ProjectPageContent content={content} gridColumn="1 / span 8" />
 
           <RelatedProjects
             projects={relatedProjects}

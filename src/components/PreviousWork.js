@@ -2,7 +2,7 @@ import React from 'react';
 import { Grid, Title } from '../design-system';
 import ProjectPreview from './ProjectPreview';
 
-function ProjectPreviewList({ projects, ...props }) {
+function PreviousWork({ projects, ...props }) {
   return (
     <Grid
       as="section"
@@ -30,4 +30,4 @@ function ProjectPreviewList({ projects, ...props }) {
   );
 }
 
-export default ProjectPreviewList;
+export default PreviousWork;

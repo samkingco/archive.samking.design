@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Headline, Caption, Link } from '../design-system';
 
-function Header(props) {
+function SiteHeader(props) {
   return (
     <Box as="header" role="banner" pt={[1, 2]} px={[1, 2]} {...props}>
       <Headline as="h1" fontSize={1} letterSpacing="extreme" mb={1}>
@@ -16,4 +16,4 @@ function Header(props) {
   );
 }
 
-export default Header;
+export default SiteHeader;

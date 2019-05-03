@@ -2,7 +2,7 @@ import React from 'react';
 import { useSiteData } from 'react-static';
 import { Box, Caption, Link } from '../design-system';
 
-function Footer(props) {
+function SiteFooter(props) {
   const { version, github, repo } = useSiteData();
   const year = new Date().getFullYear();
 
@@ -16,4 +16,4 @@ function Footer(props) {
   );
 }
 
-export default Footer;
+export default SiteFooter;

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useSiteData, useRouteData, Head } from 'react-static';
 import useTheme from '../hooks/useTheme';
 import { Box, Grid, Headline, Body, Link } from '../design-system';
-import ProjectPreviewList from '../components/ProjectPreviewList';
+import PreviousWork from '../components/PreviousWork';
 import JobHistory from '../components/JobHistory';
 
 function Index() {
@@ -78,7 +78,7 @@ function Index() {
           </Box>
         </Grid>
 
-        <ProjectPreviewList
+        <PreviousWork
           projects={projects}
           as="section"
           role="list"

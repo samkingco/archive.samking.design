@@ -6,8 +6,8 @@ import {
   ActiveThemeProvider,
   useActiveThemeContext,
 } from './components/ActiveTheme';
-import Header from './components/Header';
-import Footer from './components/Footer';
+import SiteHeader from './components/SiteHeader';
+import SiteFooter from './components/SiteFooter';
 import {
   GlobalStyle,
   GlobalFonts,
@@ -40,7 +40,7 @@ function AppContent() {
         <GlobalFonts />
 
         <Flex flexDirection="column" minHeight="100vh">
-          <Header />
+          <SiteHeader />
           <React.Suspense
             maxDuration={250}
             fallback={
@@ -54,7 +54,7 @@ function AppContent() {
                 <Routes path="*" />
               </Router>
             </PageContent>
-            <Footer />
+            <SiteFooter />
           </React.Suspense>
         </Flex>
       </ThemeProvider>
