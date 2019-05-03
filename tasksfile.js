@@ -71,7 +71,7 @@ function serveImages() {
 cli({
   start,
   build: {
-    all(stage) {
+    all(_, stage) {
       buildContent(stage);
       buildSite(stage);
     },
