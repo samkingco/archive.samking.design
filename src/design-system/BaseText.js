@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 import {
-  display,
   fontFamily,
   fontSize,
   fontWeight,
@@ -11,7 +10,6 @@ import {
 import Box from './Box';
 
 const BaseText = styled(Box)(
-  display,
   fontFamily,
   fontSize,
   fontWeight,

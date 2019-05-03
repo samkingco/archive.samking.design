@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Grid, Box, Headline, Body, Link } from '../design-system';
+import { Box, Grid, Headline, Body, Link } from '../design-system';
 
 function RelatedProjects({ projects, ...props }) {
   const [hoveredIndex, setHoveredIndex] = useState(null);
@@ -13,11 +13,11 @@ function RelatedProjects({ projects, ...props }) {
           to={`/${slug}`}
           role="listitem"
           shouldUnderline={false}
+          border={2}
+          borderColor={getBorderColor(index)}
           display="block"
           gridColumn={['1 / span 8', '2 / span 6', '3 / span 4']}
           mb={index === projects.length - 1 ? 0 : 4}
-          border={2}
-          borderColor={getBorderColor(index)}
           onMouseEnter={() => setHoveredIndex(index)}
           onMouseLeave={() => setHoveredIndex(null)}
         >

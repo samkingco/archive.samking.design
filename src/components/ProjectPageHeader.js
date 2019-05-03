@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Title, Body, Link, Caption } from '../design-system';
 
-function ProjectHeader({ title, intro, date, roles, link, ...props }) {
+function ProjectPageHeader({ title, intro, date, roles, link, ...props }) {
   return (
     <Box {...props}>
       <Title mb={2}>{title}</Title>
@@ -23,4 +23,4 @@ function ProjectHeader({ title, intro, date, roles, link, ...props }) {
   );
 }
 
-export default ProjectHeader;
+export default ProjectPageHeader;

@@ -2,27 +2,18 @@ import React from 'react';
 import { Router } from '@reach/router';
 import { Root, Routes, Head } from 'react-static';
 import { ThemeProvider } from 'emotion-theming';
+import { GlobalStyle, GlobalFonts, Flex } from './design-system';
 import {
   ActiveThemeProvider,
   useActiveThemeContext,
 } from './components/ActiveTheme';
 import SiteHeader from './components/SiteHeader';
 import SiteFooter from './components/SiteFooter';
-import {
-  GlobalStyle,
-  GlobalFonts,
-  LoadingIndicator,
-  Flex,
-} from './design-system';
+import SiteContentFallback from './components/SiteContentFallback';
+import RouterContainer from './components/RouterContainer';
 import scrollHandler from './utils/scrollHandler';
 
 scrollHandler();
-
-const PageContent = ({ children }) => (
-  <Flex flex="1" width="100%" justifyContent="center" alignItems="center">
-    {children}
-  </Flex>
-);
 
 function AppContent() {
   const title = 'Sam King—Designer';
@@ -38,22 +29,14 @@ function AppContent() {
       <ThemeProvider theme={theme}>
         <GlobalStyle {...theme.colors} />
         <GlobalFonts />
-
         <Flex flexDirection="column" minHeight="100vh">
           <SiteHeader />
-          <React.Suspense
-            maxDuration={250}
-            fallback={
-              <PageContent>
-                <LoadingIndicator />
-              </PageContent>
-            }
-          >
-            <PageContent>
+          <React.Suspense maxDuration={250} fallback={<SiteContentFallback />}>
+            <RouterContainer>
               <Router primary={false}>
                 <Routes path="*" />
               </Router>
-            </PageContent>
+            </RouterContainer>
             <SiteFooter />
           </React.Suspense>
         </Flex>

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { Body, Figure, Headline, Link, Grid } from '../design-system';
+import { Grid, Headline, Body, Link, Figure } from '../design-system';
 import ContentNode from '../components/ContentNode';
 
 const Container = styled(Grid)`
@@ -22,7 +22,7 @@ const Container = styled(Grid)`
   }
 `;
 
-function ProjectContent({ content, ...props }) {
+function ProjectPageContent({ content, ...props }) {
   const textGridColumn = [
     '1 / span 8',
     '2 / span 7',
@@ -77,4 +77,4 @@ function ProjectContent({ content, ...props }) {
   );
 }
 
-export default ProjectContent;
+export default ProjectPageContent;

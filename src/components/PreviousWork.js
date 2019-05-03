@@ -4,12 +4,7 @@ import ProjectPreview from './ProjectPreview';
 
 function PreviousWork({ projects, ...props }) {
   return (
-    <Grid
-      as="section"
-      role="list"
-      gridTemplateColumns="repeat(8, 1fr)"
-      {...props}
-    >
+    <Grid gridTemplateColumns="repeat(8, 1fr)" {...props}>
       <Title
         as="h2"
         gridColumn={['1 / span 8', null, null, null, '2 / span 5']}
@@ -22,6 +17,7 @@ function PreviousWork({ projects, ...props }) {
         <ProjectPreview
           {...project}
           key={project.slug}
+          role="listitem"
           nthChild={index + 1}
           mb={index === projects.length - 1 ? 0 : 5}
         />

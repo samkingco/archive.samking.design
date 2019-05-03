@@ -15,8 +15,8 @@ function JobHistory({ history, ...props }) {
 
       {history.map((job, index) => (
         <Job
-          key={`${job.role}/${job.company}`}
           {...job}
+          key={`${job.role}/${job.company}`}
           role="listitem"
           gridColumn={[
             '1 / span 8',

@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link as RouterLink } from '@reach/router';
 import styled from '@emotion/styled';
+import { Link as RouterLink } from '@reach/router';
 import BaseText from './BaseText';
 
 const StyledLink = styled(BaseText)(({ theme, shouldUnderline }) => ({

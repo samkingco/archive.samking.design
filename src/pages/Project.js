@@ -1,7 +1,7 @@
 import React from 'react';
 import { useRouteData, Head } from 'react-static';
 import useTheme from '../hooks/useTheme';
-import { Box, Figure, Grid } from '../design-system';
+import { PageWrapper, Figure, Grid } from '../design-system';
 import ProjectPageHeader from '../components/ProjectPageHeader';
 import ProjectPageContent from '../components/ProjectPageContent';
 import RelatedProjects from '../components/RelatedProjects';
@@ -41,14 +41,7 @@ function Project() {
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
 
-      <Box
-        as="main"
-        role="main"
-        px={[1, 2]}
-        py={[5, 6]}
-        maxWidth="70em"
-        mx="auto"
-      >
+      <PageWrapper as="main" role="main">
         <Grid as="article" gridTemplateColumns="repeat(8, 1fr)">
           <ProjectPageHeader
             title={title}
@@ -86,7 +79,7 @@ function Project() {
             mt={5}
           />
         </Grid>
-      </Box>
+      </PageWrapper>
     </React.Fragment>
   );
 }
