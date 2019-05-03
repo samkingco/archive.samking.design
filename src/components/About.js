@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Box, Grid, Headline, Body, Link } from '../design-system';
+import TextScrambler from './TextScrambler';
 
 function About({ email, twitter, location, latlong, ...props }) {
   const [revealLatlong, setRevealLatlong] = useState(false);
@@ -30,16 +31,27 @@ function About({ email, twitter, location, latlong, ...props }) {
           both personal and for startups. Open to new projects—hit me up.
         </Body>
         <Body>
-          Email: <Link to={`mailto:${email}`}>{email}</Link>
+          Email:{' '}
+          <Link to={`mailto:${email}`}>
+            <TextScrambler from={`${email}`} />
+          </Link>
         </Body>
         <Body>
-          Twitter: <Link to={`https://twitter.com/${twitter}`}>@{twitter}</Link>
+          Twitter:{' '}
+          <Link to={`https://twitter.com/${twitter}`}>
+            <TextScrambler from={`@${twitter}`} />
+          </Link>
         </Body>
         <Body
           onMouseEnter={() => setRevealLatlong(true)}
           onMouseLeave={() => setRevealLatlong(false)}
         >
-          Location: {revealLatlong ? latlong : location}
+          Location:{' '}
+          <TextScrambler
+            initialValue={location}
+            from={!revealLatlong ? latlong : location}
+            to={!revealLatlong ? location : latlong}
+          />
         </Body>
       </Box>
     </Grid>
