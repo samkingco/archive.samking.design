@@ -21,8 +21,8 @@ jobs:
       - run:
           name: Build content and app
           command: npm run task -- build:ci
-      - persist_to_workspace:
-          root: ./
+      - save_cache:
+          key: dist-{{ .Environment.CIRCLE_BRANCH }}-{{ .Environment.CIRCLE_SHA1 }}
           paths:
             - content/dist/images
             - dist
@@ -30,8 +30,8 @@ jobs:
     docker:
       - image: circleci/python:latest
     steps:
-      - attach_workspace:
-          at: ./
+      - restore_cache:
+          key: dist-{{ .Environment.CIRCLE_BRANCH }}-{{ .Environment.CIRCLE_SHA1 }}
       - aws-s3/sync:
           from: content/dist/images
           to: 's3://samkingco-imgix/design'
