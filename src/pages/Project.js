@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useRouteData, Head } from 'react-static';
+import useTheme from '../hooks/useTheme';
 import { Box, Figure, Grid } from '../design-system';
-import { useTheme } from '../components/ActiveTheme';
 import ProjectHeader from '../components/ProjectHeader';
 import ProjectContent from '../components/ProjectContent';
 import RelatedProjects from '../components/RelatedProjects';
@@ -19,11 +19,7 @@ function Project() {
     relatedProjects,
   } = useRouteData();
 
-  const { setTheme } = useTheme();
-
-  useEffect(() => {
-    setTheme(slug);
-  }, [slug]);
+  useTheme(slug, [slug]);
 
   const meta = {
     title,

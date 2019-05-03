@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import theme from '../design-system/theme';
 
 const ActiveThemeContext = React.createContext();
-export const useTheme = () => useContext(ActiveThemeContext);
+export const useActiveThemeContext = () => useContext(ActiveThemeContext);
 
 function getTheme(mode, defaultMode) {
   const colors =

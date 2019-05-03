@@ -2,7 +2,10 @@ import React from 'react';
 import { Router } from '@reach/router';
 import { Root, Routes, Head } from 'react-static';
 import { ThemeProvider } from 'emotion-theming';
-import { ActiveThemeProvider, useTheme } from './components/ActiveTheme';
+import {
+  ActiveThemeProvider,
+  useActiveThemeContext,
+} from './components/ActiveTheme';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import {
@@ -22,8 +25,8 @@ const PageContent = ({ children }) => (
 );
 
 function AppContent() {
-  const { theme } = useTheme();
   const title = 'Sam King—Designer';
+  const { theme } = useActiveThemeContext();
 
   return (
     <Root>

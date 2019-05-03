@@ -1,20 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useSiteData, useRouteData, Head } from 'react-static';
-import { useTheme } from '../components/ActiveTheme';
+import useTheme from '../hooks/useTheme';
 import { Box, Grid, Headline, Body, Link } from '../design-system';
 import ProjectPreviewList from '../components/ProjectPreviewList';
 import JobHistory from '../components/JobHistory';
 
 function Index() {
-  const { email, location, latlong, twitter } = useSiteData();
+  useTheme('light');
+  const { email, twitter, location, latlong } = useSiteData();
   const { projects, history } = useRouteData();
   const [revealLatlong, setRevealLatlong] = useState(false);
-
-  const { setTheme } = useTheme();
-
-  useEffect(() => {
-    setTheme('light');
-  }, []);
 
   const meta = {
     description:

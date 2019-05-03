@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Title, Body, Flex } from '../design-system';
-import { useTheme } from '../components/ActiveTheme';
+import useTheme from '../hooks/useTheme';
 
 function NotFound() {
+  useTheme('red');
   const [ready, setReady] = useState(false);
-  const { setTheme } = useTheme();
 
   useEffect(() => {
     setReady(true);
-    setTheme('red');
   }, []);
 
   return ready ? (
