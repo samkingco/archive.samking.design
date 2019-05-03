@@ -12,9 +12,9 @@ link:
   url: https://lyst.com
   text: lyst.com
 content: |
-  ## Where I fit in
+  ## The web product
 
-  I joined as a designer as part of the web team where we worked towards increasing conversion and improving the discoverability of the huge inventory. I worked on a wide range of projects on the website including a header redesign, a product page redesign, editorial content, and homepage redesign.
+  I joined as a designer in the web team where we worked towards increasing conversion and improving the discoverability of the huge inventory. I worked on a wide range of projects on the website including a new header and navigation, new product pages, editorial content, and a homepage redesign.
 
   ![Header Desktop](lyst/header-desktop.png)
 
@@ -38,23 +38,25 @@ content: |
 
   ## Internal tools
 
-  To improve the life of people working at Lyst, I worked on a couple of internal tools. I made a small tool for the editorial team (or anyone in the company) to crop and resize lyst for various places around the product. This was accompanied by a chrome extension to preview said lyst on the website
+  I was also part of a small team tasked with building a product to promote certain content to various places on the site. Users selected certain types of content like products or articles, and then they chose where to promote it based on some conditions and exclusions. The website could then request promoted content wherever it needed it. The service would send a list of promotions, making sure to cycle content so the same promotion wasn't seen over and over.
 
-  ![Drop Crop Pop](lyst/drop-crop-pop.png "Drop Crop & Pop")
+  As this product got a little more complex, we decided that it would be a good idea if eventually the dashboard would house all our other internal dashboards and tools. We called it Lyst OS. As it happened, shortly after that decision, a new product was in the pipeline which would allow internal teams to manage promotions and discounts for certain retailers. It made sense to build it directly into Lyst OS. I worked almost exclusively on this new dashboard (both design and front-end) while the rest of the team continued work on the promoted content dashboard and the supporting backend.
 
-  I was also part of a small team tasked with building an internal dashboard for promoting content to various places on the site. We started by creating components for form elements and layout, then writing extensive unit tests. This paid off when it came to adding more dashboards to this project because of the reusability.
+  The best decision we made was to create some basic components early on—things like form elements, typography, and layout. This was my first introduction to "design systems". I learnt a whole lot more about building truly reusable components and systems than I would just hacking on side projects.
 
-  We wanted this to be the sole place for all internal dashboards. We called it Lyst OS. There were quite a few existing dashboards, but a new one was in progress so it made sense to build it directly in Lyst OS. This was a dashboard for retailer promotions, which I worked on almost exclusively while the rest of the team continued work on the promoted content dashboard and the supporting backend.
-
-  As far as I know, Lyst OS is still being worked on with new dashboards being added. Because of the reusability of components, it has apparently been very resilient and ‘stood the test of time’.
+  As far as I know, Lyst OS is still being worked on with new dashboards being added. Because of the solid foundations, it has apparently been very resilient and ‘stood the test of time’.
 
   ![Lyst OS Promotions dashboard](lyst/promotions.png)
 
   ![Lyst OS form components](lyst/components.png "Lyst OS Promotions dashboard & a whole host of form components")
 
+  Wheneve I had some downtime, I tried to build small tools that would help other teams in some way. One of those small tools was for the editorial team (or anyone in the company) to crop and resize images for certain presets like article images or social posts. This was accompanied by a chrome extension to preview their cropped images on the Lyst website.
+
+  ![Drop Crop Pop](lyst/drop-crop-pop.png "Drop Crop & Pop")
+
   ## Marketing
 
-  The design team also shared responsibility of working on marketing campaigns and social content. This meant I worked on some print collateral and even some poster campaigns that were used in Old St. station take overs, and fly posting in New York.
+  The design team also shared responsibility of working on marketing campaigns and social content. This meant I worked on some print collateral and even some poster campaigns that were used in Old Street tube station take overs, and fly posting in New York.
 
   ![Old Street Takeover](lyst/oldst-takeover.png)
 

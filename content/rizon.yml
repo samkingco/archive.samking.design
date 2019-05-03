@@ -6,7 +6,7 @@ roles:
   - Interface
   - Branding
   - Marketing
-intro: Figuring out when to take photos outdoors can be a real nightmare. Rizon is an app that alerts you when Golden Hour is approaching so you never miss out on that perfect light. It's currently available on the App Store and has had over 10k downloads since August 2015.
+intro: Figuring out when to take photos outdoors can be a real nightmare. Rizon is an app that alerts you when Golden Hour is approaching so you never miss out on that perfect light.
 cover: rizon/cover.jpg
 link:
   url: https://rizonapp.co
@@ -14,49 +14,47 @@ link:
 content: |
   ## The idea
 
-  I had the idea for Rizon in a small book store in New York. I saw a calendar with beautiful illustrations of sun and moon phases when I remembered how frustrating it was finding the best time to take photos outdoors. There were a few online tools, but they were all clunky and displayed too much information. I wanted to change that, taking inspiration from the calendar I'd seen in New York. I did some sketches on the flight home and started designing the next day.
+  I had the idea for Rizon while browsing a small book store in New York. I saw a calendar with beautiful illustrations of sun and moon phases when I remembered how frustrating it was to find the best time to take photos outdoors. There were a plethora online tools, but they were clunky and lacked focus. I wanted to change that. Taking inspiration from the calendar I'd seen in New York, I did some sketches/planning on the flight home and started putting it into pixels.
 
   ![Ideas & inspiration](rizon/inspiration.png "Ideas & inspiration")
 
   ![First Designs](rizon/first-designs.png "First pass of screens after sketches")
 
-  I built a simple prototype as a web app, but soon realised there were things missing that you couldn't do without going native. Push notifications were very hard to work with in 2014 and monetisation was also tricky as I didn't want to rely on ad revenue.
+  Looking at the first set of mockups, it was clear there wasn't anything that users couldn't get by going to an existing tool. There was more focus but it still wasn't as useful as it could be. I loved the idea of getting notified when the sun was almost in the perfect spot, and thought that would be really useful as a photographer. I built a web prototype but soon ran into the probletm that if I wanted alarm style notifications, I would have to go native.
 
-  Looking back on the first set of mockups, there wasn't anything that users couldn't get by going to an existing tool. That's where the idea for notifications came from. I knew I had to simplify the interface too so I made the main circle interactive. By rotating the circle, you could access the information for that moment.
+  I also knew I had to simplify the interface, so I made the main circle interactive which allowed me to clean up the list of times. By rotating the circle, you could access the information for that moment.
 
   ![Web Prototype](rizon/prototype.png "Some screens from the web prototype")
 
-  ## The build process & design improvements
+  ## Iterations
 
-  I had a stab at making this version as a native iOS app. Despite trying a few courses, Objective C was quite tricky for me to pick up. If I wanted Rizon to be feature full, I needed some help. I found a developer who was willing to work on Rizon in exchange for some future design work on one of his ideas.
+  I had a stab at making this version as a native iOS app. Despite trying a few courses, Objective C was still too alien to the time. If I wanted Rizon to be as feature-rich as it needed to be, I needed some help. I found a developer who was willing to work on Rizon in exchange for some future design work on one of his ideas.
 
-  [Malolan](https://twitter.com/malolan_s) was in Boston, and I was in London so the time difference was difficult at first, but it worked out OK in the end. I could update designs in the evening so he could work on them over night. Using Slack meant he could leave any questions, and I could answer when I woke up in the morning. To keep conversations focused, we had specific channels for things like animations, notifications, user feedback.
-
-  When building the interface, we came up on a few problems. I hadn't put much thought into 12/24hr for example, or can we do anything to prime the users permission for location? I went back into iterative design mode with Malolan and the app changed again.
+  [Malolan](https://twitter.com/malolan_s) was in Boston, and I was in London so the time difference was difficult at first. We made it work by using Slack. I could make improvements to the designs in the evening, and then Malolan could build them over night. Using Slack meant he could leave any questions, and I could answer when I woke up in the morning. To keep conversations focused, we had specific channels for things like animations, notifications, and user feedback.
 
   ![Design improvements](rizon/design-improvements-1.png)
 
   ![Design improvements](rizon/design-improvements-2.png)
 
-  ![Spec sheets](rizon/design-improvements-3.png "Spec sheet before we discovered zeplin.io…")
+  ![Spec sheets](rizon/design-improvements-3.png "Spec sheets painstakingly created before Zeplin was a thing")
 
   ## Marketing & the Beta
 
-  Once we had the main functionality working, we went into beta. I shot some photos using design mockups so people could get an idea of what the app would do. Then I built a simple website for the app to capture emails for beta testing, and also get a general idea of interest.
+  Once we had the main functionality working, we went into beta. I shot some photos of the designs on my phone so people could get an idea of what the app would do, and what it was intended for. Then I built a simple website to capture emails for beta testing, and also get a sense of interest surrounding the app.
 
   ![Rizon photography](rizon/photos.png)
 
-  ![Rizon website](rizon/website.png "Marketing site after launch with the sign up CTA's replaced with download CTA's")
+  ![Rizon website](rizon/website.png "Marketing site after launch")
 
-  We posted the site around a few places; photography websites, forums, and a few design sites too. In the first week we had a little over 700 people signed up for the beta. We split the 700 into smaller chunks to get better feedback. Most of the feedback was fluffy, but we noticed some common themes. We also got a lot of feature requests for things we'd never thought about.
+  We posted the link to photography websites & forums, and a few design sites too. In the first week of the website being live, we had a little over 700 people signed up for the beta. We split the 700 into smaller buckets so we could get more focused feedback. Most of the feedback was fluffy, but it definitely highlighted some common themes. We also got a lot of feature requests for things we'd never thought about.
 
-  Unfortunately it was only a project we could work on during evenings and weekends so things had to wait. We had a Trello board full of user requests and things we were actually going to ship. We prioritised what we'd ship first and focused on getting it out to the world.
+  Due to it being a project we could only work on during evenings and weekends, most of the requests had to wait. We had a Trello board full of feature requests which helped us prioritise what to ship first, and kept us focused on getting it out to the world.
+
+  The features we prioritised for first release were a couple of onboarding screens, reminders, and saved locations. We wanted users to be able to use Rizon no matter where they were in the world, so saved/offline locations were really important to us.
 
   ## Going Live
 
-  We wanted users to be able to use Rizon no matter where they were in the world. The first version we shipped had saved locations, offline locations, and reminders.
-
-  Then was the mammoth task of getting screenshots and preparing App Store assets. Luckily we could automate most of this with a [sketch plugin](https://github.com/preciousforever/sketch-data-populator) and some open source tools. We used [Fastlane Snapshot](https://github.com/fastlane/fastlane/tree/master/snapshot) to generate screenshots at different device sizes. I generated some JSON for the Sketch plugin to use to replace text. I also created a large Sketch file with placeholders for the JSON replacement. This made generating screenshots for new versions take around 15 minutes altogether.
+  Then came the mammoth task of getting screenshots and preparing App Store assets. Luckily we could automate most of this with a sketch [plugin](https://github.com/preciousforever/sketch-data-populator) and some open source tools. We used [Fastlane Snapshot](https://github.com/fastlane/fastlane/tree/master/snapshot) to generate screenshots at different device sizes. I then generated some JSON for the Sketch plugin to use, and made a large Sketch file with placeholders for the JSON replacement. This made generating screenshots for new versions take around 15 minutes altogether, a real time saver when you're trying to release fast!
 
   ![Asset prep for the App Store](rizon/app-store-1.png)
 
@@ -66,18 +64,20 @@ content: |
 
   ![Some campaigns for social](rizon/social.png "Some small campaign images for social")
 
-  We also planned to launch on Product Hunt to get a bit of extra visibility. I'm glad we did as we got featured on the front page, and held second spot for the entire day!
+  We went live! Before that though, we got approached to launch Rizon on Product Hunt which would help us get a bit of extra visibility. I'm glad we did as we got featured on the front page, and held the second spot for the entire day!
 
-  After the first version went live, Apple asked us for some promotional artwork. I got rather excited as I knew this meant we were in line to be featured somewhere on the App Store. I submitted the artwork and spent the next week checking like a maniac. Nothing came of it until around a month later where Rizon was featured in the Photo and Video category. Our downloads boomed a little, but nothing crazy. Rizon has been featured in the Photo and Video category pretty much all the time since then. We also got featured a few times on the home screen of the App Store.
+  About a fortnight after being live, Apple then asked us for some promotional artwork. I got rather excited as I assumed this meant we were in line to be featured somewhere on the App Store. I submitted the artwork and spent the next week furiously refreshing the App Store. Nothing came of it until around a month later when Rizon was featured in the Photo and Video category. Our downloads boomed a little, but nothing major. We also got featured a few times on the main home screen of the App Store which saw much larger spikes.
+
+  Rizon has been featured in the Photo and Video category pretty consistently since that first feature, and in the first 2 years on the platform, it's been downloaded more than 10,000 times which I never would have imagined!
 
   ![Featured placements on the App Store](rizon/featured.png "Featured placements on the App Store")
 
   ## Future plans
 
-  We're not currently working on Rizon as we both have little free time, but this hasn't stopped me updating designs whenever I do have the time. Hopefully we'll get to build all the features users requested.
+  We've paused work on Rizon as we both have little free time now, but that hasn't stopped me updating designs every now and then. Hopefully we'll get to build all the things on our Trello board some day!
 
   ![Future plans for Rizon](rizon/future-plans.png)
 
   ## A great learning experience
 
-  I've learnt a lot about what it takes to launch an app. I never realised how much work goes into managing a beta, marketing, and even getting things ready for the App Store. Working with a remote developer has been a great challenge, and it's helped me learn a little about AutoLayout and Objective-C. Overall I've loved working on Rizon despite it just being a small side project.
+  I've learnt a lot about what it takes to launch a product. I never realised how much work goes into managing a beta, marketing, and even getting things ready for the App Store. I also learnt a little Objective-C! Overall, I've loved working on Rizon despite it initially being a small side project.
