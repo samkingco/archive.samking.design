@@ -11,7 +11,7 @@ Design portfolio of Sam King—https://samking.design
 [ci]: https://flat.badgen.net/circleci/github/samkingco/samking.design
 [license]: https://flat.badgen.net/badge/license/MIT/blue
 [site-badge]: https://flat.badgen.net/badge/link/samking.design/black
-[circle]: https://circleci.com/samkingco/samking.design
+[circle]: https://circleci.com/gh/samkingco/samking.design
 
 ```sh
 git clone git@github.com:samkingco/samking.design.git
