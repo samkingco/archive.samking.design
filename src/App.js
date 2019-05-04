@@ -30,7 +30,6 @@ function AppContent() {
       </Head>
       <ThemeProvider theme={theme}>
         <GlobalStyle {...theme.colors} />
-        <GlobalFonts />
         <Flex flexDirection="column" minHeight="100vh">
           <SiteHeader />
           <React.Suspense maxDuration={250} fallback={<SiteContentFallback />}>
@@ -49,9 +48,12 @@ function AppContent() {
 
 function App() {
   return (
-    <ActiveThemeProvider>
-      <AppContent />
-    </ActiveThemeProvider>
+    <React.Fragment>
+      <GlobalFonts />
+      <ActiveThemeProvider>
+        <AppContent />
+      </ActiveThemeProvider>
+    </React.Fragment>
   );
 }
 
