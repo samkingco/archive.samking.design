@@ -1,4 +1,4 @@
-const { sh, cli } = require('tasksfile');
+const { sh, cli, help } = require('tasksfile');
 const pkg = require('./package.json');
 
 const envMap = {
@@ -57,16 +57,59 @@ function serve(_, port = PORTS.SERVE_DIST) {
   sh(`serve dist -p ${port}`, { async: true });
 }
 
-function serveImages() {
+function serveImages(_, port = PORTS.IMAGE_SERVER) {
   console.log(`Starting ${pkg.name} mock image server`);
-
-  const env = [
-    `PORT=${PORTS.IMAGE_SERVER}`,
-    `APP_IMAGES_DEST=${PATHS.imagesDest}`,
-  ];
-
+  const env = [`PORT=${port}`, `APP_IMAGES_DEST=${PATHS.imagesDest}`];
   sh(`${env.join(' ')} nodemon ${PATHS.bin}/image-server.js`, { async: true });
 }
+
+help(buildContent, 'Builds content data for a particular environment.', {
+  params: ['stage'],
+  examples: `
+  task build:content
+  task build:content prod
+    task build:content dev
+    task build:content local
+  `,
+});
+
+help(start, 'Starts a local dev server with hot reloading etc.');
+
+help(buildSite, 'Builds the site for a particular environment.', {
+  params: ['stage'],
+  examples: `
+  task build:site
+    task build:site prod
+    task build:site dev
+    task build:site local
+  `,
+});
+
+help(analyze, 'Builds the site and analyzes the bundle.', {
+  params: ['stage'],
+  examples: `
+  task analyze
+  task analyze prod
+  task analyze dev
+  task analyze local
+  `,
+});
+
+help(serve, 'Serves the built site from /dist.', {
+  params: ['port'],
+  examples: `
+  task serve
+  task serve 6666
+  `,
+});
+
+help(serveImages, 'Starts a local server for images with an imgix like API.', {
+  params: ['port'],
+  examples: `
+  task serveImages
+  task serveImages 6666
+  `,
+});
 
 cli({
   start,
