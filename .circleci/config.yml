@@ -37,11 +37,16 @@ jobs:
       - aws-s3/sync:
           from: content/dist/images
           to: 's3://samkingco-imgix/design'
-          arguments: '--acl public-read'
+          arguments: '--acl public-read --cache-control max-age=31536000'
       - aws-s3/sync:
           from: dist
           to: 's3://samking.design'
-          arguments: '--acl public-read'
+          arguments: '--exclude "*.html" --exclude "*.json" --acl public-read --cache-control max-age=31536000'
+          overwrite: true
+      - aws-s3/sync:
+          from: dist
+          to: 's3://samking.design'
+          arguments: '--exclude "*" --include "*.html" --include "*.json" --acl public-read --cache-control max-age=0'
           overwrite: true
 workflows:
   version: 2
