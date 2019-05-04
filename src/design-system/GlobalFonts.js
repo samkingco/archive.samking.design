@@ -7,7 +7,7 @@ export function GlobalFonts() {
       styles={css`
         @font-face {
           font-family: 'Text';
-          font-display: swap;
+          font-display: fallback;
           src: url('/fonts/Text.woff') format('woff'),
             url('/fonts/Text.woff2') format('woff2');
           font-style: normal;
@@ -16,7 +16,7 @@ export function GlobalFonts() {
 
         @font-face {
           font-family: 'Text';
-          font-display: swap;
+          font-display: fallback;
           src: url('/fonts/TextBold.woff') format('woff'),
             url('/fonts/TextBold.woff2') format('woff2');
           font-style: normal;
@@ -25,7 +25,7 @@ export function GlobalFonts() {
 
         @font-face {
           font-family: 'TextAlt';
-          font-display: swap;
+          font-display: fallback;
           src: url('/fonts/TextAlt.woff') format('woff'),
             url('/fonts/TextAlt.woff2') format('woff2');
           font-style: normal;
