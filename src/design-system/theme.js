@@ -1,9 +1,12 @@
 const breakpoints = ['32em', '40em', '56em', '64em'];
 const space = [0, 8, 16, 24, 32, 64, 128];
 
+const sansStack =
+  'system, -apple-system, "Helvetica Neue", Helvetica, "Segoe UI", "Roboto", sans-serif';
+
 export const fonts = {
-  text: '"Text", -apple-system, Helvetica, sans-serif',
-  textAlt: '"TextAlt", -apple-system, Helvetica, sans-serif',
+  text: `"Text", ${sansStack}`,
+  textAlt: `"TextAlt", ${sansStack}`,
 };
 
 export const fontSizes = [14, 16, 20, 32];

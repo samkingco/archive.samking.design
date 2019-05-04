@@ -10,7 +10,7 @@ Title.defaultProps = {
   m: 0,
   color: 'text',
   fontFamily: 'textAlt',
-  fontWeight: 'normal',
+  fontWeight: 'bold',
   fontSize: 3,
   lineHeight: 1,
   letterSpacing: 'normal',
