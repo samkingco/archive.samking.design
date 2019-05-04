@@ -1,9 +1,16 @@
 import React, { useState } from 'react';
 import { Box, Grid, Headline, Body, Link } from '../design-system';
-import TextScrambler from './TextScrambler';
+import useTextScramble from '../hooks/useTextScramble';
 
 function About({ email, twitter, location, latlong, ...props }) {
-  const [revealLatlong, setRevealLatlong] = useState(false);
+  const [showLatLong, setShowLatLong] = useState(null);
+
+  const emailText = useTextScramble({ from: email });
+  const twitterText = useTextScramble({ from: `@${twitter}` });
+  const locationText = useTextScramble({
+    from: showLatLong !== null ? (showLatLong ? location : latlong) : location,
+    to: showLatLong ? latlong : location,
+  });
 
   return (
     <Grid gridTemplateColumns="repeat(8, 1fr)" mb={[5, 6]} {...props}>
@@ -31,27 +38,17 @@ function About({ email, twitter, location, latlong, ...props }) {
           both personal and for startups. Open to new projects—hit me up.
         </Body>
         <Body>
-          Email:{' '}
-          <Link to={`mailto:${email}`}>
-            <TextScrambler from={`${email}`} />
-          </Link>
+          Email: <Link to={`mailto:${email}`}>{emailText}</Link>
         </Body>
         <Body>
           Twitter:{' '}
-          <Link to={`https://twitter.com/${twitter}`}>
-            <TextScrambler from={`@${twitter}`} />
-          </Link>
+          <Link to={`https://twitter.com/${twitter}`}>{twitterText}</Link>
         </Body>
         <Body
-          onMouseEnter={() => setRevealLatlong(true)}
-          onMouseLeave={() => setRevealLatlong(false)}
+          onMouseEnter={() => setShowLatLong(true)}
+          onMouseLeave={() => setShowLatLong(false)}
         >
-          Location:{' '}
-          <TextScrambler
-            initialValue={location}
-            from={!revealLatlong ? latlong : location}
-            to={!revealLatlong ? location : latlong}
-          />
+          Location: {locationText}
         </Body>
       </Box>
     </Grid>
