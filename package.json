@@ -14,6 +14,7 @@
     "emotion": "^10.0.9",
     "emotion-theming": "^10.0.10",
     "immer": "^2.1.5",
+    "query-string": "^6.5.0",
     "react": "^16.8.2",
     "react-dom": "^16.8.2",
     "react-static": "^7.0.10",

@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
 import styled from '@emotion/styled';
+import queryString from 'query-string';
 import Box from './Box';
 import useIntersectionObserver from '../hooks/useIntersectionObserver';
 
@@ -38,8 +39,9 @@ ImgWrapper.displayName = 'ImgWrapper';
 
 const Image = ({
   src,
-  srcSetSizes = [512, 896, 1024, 2048, 2256],
   alt,
+  widths = [512, 896, 1024, 2048, 2256],
+  processing,
   ...props
 }) => {
   const wrapperRef = useRef(null);
@@ -49,19 +51,23 @@ const Image = ({
     rootMargin: '50%',
   });
 
-  const srcSet = srcSetSizes.map(size => `${src}?w=${size} ${size}w`).join(',');
-  const sizes = srcSetSizes
-    .map((size, index) =>
-      index !== srcSetSizes.length
-        ? `(max-width: ${size}px) ${size}px`
-        : `${size}px`,
-    )
+  function srcForWidth(width) {
+    return `${src}?${queryString.stringify({ ...processing, w: width })}`;
+  }
+
+  const defaultSrc = srcForWidth(widths[0]);
+
+  const srcSet = widths
+    .map(width => `${srcForWidth(width)} ${width}w`)
     .join(',');
 
-  const imgProps = {
-    src: isInView ? `${src}?w=${srcSetSizes[0]}` : '',
-    srcSet: isInView ? srcSet : '',
-  };
+  const sizes = widths
+    .map((width, index) =>
+      index !== widths.length
+        ? `(max-width: ${width}px) ${width}px`
+        : `${width}px`,
+    )
+    .join(',');
 
   return (
     <ImgWrapper
@@ -70,17 +76,26 @@ const Image = ({
       {...props}
     >
       <Img
-        {...imgProps}
+        src={isInView ? defaultSrc : ''}
+        srcSet={isInView ? srcSet : ''}
         sizes={sizes}
         alt={alt}
         onLoad={() => setHasLoaded(true)}
         opacity={hasLoaded ? 1 : 0}
       />
       <noscript>
-        <NoScriptImg src={`${src}?w=${srcSetSizes[0]}`} alt={alt} />
+        <NoScriptImg src={defaultSrc} alt={alt} />
       </noscript>
     </ImgWrapper>
   );
+};
+
+Image.defaultProps = {
+  processing: {
+    auto: 'format',
+    lossless: true,
+    q: 60,
+  },
 };
 
 Image.displayName = 'Image';
