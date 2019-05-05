@@ -30,7 +30,7 @@ function Project() {
   };
 
   return (
-    <React.Fragment>
+    <PageWrapper as="main" role="main">
       <Head>
         <title>{meta.title}</title>
         <meta name="description" content={meta.description} />
@@ -41,46 +41,44 @@ function Project() {
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
 
-      <PageWrapper as="main" role="main">
-        <Grid as="article" gridTemplateColumns="repeat(8, 1fr)">
-          <ProjectPageHeader
-            title={title}
-            intro={intro}
-            date={date}
-            roles={roles}
-            link={link}
-            as="hgroup"
-            gridColumn={[
-              '1 / span 8',
-              '2 / span 7',
-              '2 / span 6',
-              '2 / span 5',
-              '3 / span 4',
-            ]}
-            mb={5}
-          />
+      <Grid as="article" gridTemplateColumns="repeat(8, 1fr)">
+        <ProjectPageHeader
+          title={title}
+          intro={intro}
+          date={date}
+          roles={roles}
+          link={link}
+          as="hgroup"
+          gridColumn={[
+            '1 / span 8',
+            '2 / span 7',
+            '2 / span 6',
+            '2 / span 5',
+            '3 / span 4',
+          ]}
+          mb={5}
+        />
 
-          <Figure
-            src={cover.src}
-            alt={cover.alt}
-            ratio={cover.ratio}
-            gridColumn={['1 / span 8', null, '2 / span 7']}
-            mr={[-1, -2]}
-            ml={[-1, -2, 0]}
-            mb={5}
-          />
+        <Figure
+          src={cover.src}
+          alt={cover.alt}
+          ratio={cover.ratio}
+          gridColumn={['1 / span 8', null, '2 / span 7']}
+          mr={[-1, -2]}
+          ml={[-1, -2, 0]}
+          mb={5}
+        />
 
-          <ProjectPageContent content={content} gridColumn="1 / span 8" />
+        <ProjectPageContent content={content} gridColumn="1 / span 8" />
 
-          <RelatedProjects
-            projects={relatedProjects}
-            as="footer"
-            gridColumn="1 / span 8"
-            mt={5}
-          />
-        </Grid>
-      </PageWrapper>
-    </React.Fragment>
+        <RelatedProjects
+          projects={relatedProjects}
+          as="footer"
+          gridColumn="1 / span 8"
+          mt={5}
+        />
+      </Grid>
+    </PageWrapper>
   );
 }
 

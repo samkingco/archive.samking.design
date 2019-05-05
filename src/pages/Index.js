@@ -18,39 +18,38 @@ function Index() {
   };
 
   return (
-    <React.Fragment>
+    <PageWrapper as="main" role="main">
       <Head>
         <meta name="description" content={meta.description} />
         <meta property="og:description" content={meta.description} />
         <meta property="og:url" content={meta.url} />
       </Head>
-      <PageWrapper as="main" role="main">
-        <About
-          as="section"
-          aria-label="About me"
-          email={email}
-          twitter={twitter}
-          location={location}
-          latlong={latlong}
-          mb={[5, 6]}
-        />
 
-        <PreviousWork
-          projects={projects}
-          as="section"
-          role="list"
-          aria-label="Design projects"
-          mb={[5, 6]}
-        />
+      <About
+        as="section"
+        aria-label="About me"
+        email={email}
+        twitter={twitter}
+        location={location}
+        latlong={latlong}
+        mb={[5, 6]}
+      />
 
-        <JobHistory
-          history={history}
-          as="section"
-          role="list"
-          aria-label="Job history"
-        />
-      </PageWrapper>
-    </React.Fragment>
+      <PreviousWork
+        projects={projects}
+        as="section"
+        role="list"
+        aria-label="Design projects"
+        mb={[5, 6]}
+      />
+
+      <JobHistory
+        history={history}
+        as="section"
+        role="list"
+        aria-label="Job history"
+      />
+    </PageWrapper>
   );
 }
 
