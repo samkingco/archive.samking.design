@@ -9,7 +9,7 @@ import About from '../components/About';
 
 function Index() {
   useTheme('light');
-  const { email, twitter, location, latlong } = useSiteData();
+  const { email, handle, location, latlong } = useSiteData();
   const { projects, history } = useRouteData();
 
   return (
@@ -20,7 +20,7 @@ function Index() {
         as="section"
         aria-label="About me"
         email={email}
-        twitter={twitter}
+        twitter={handle}
         location={location}
         latlong={latlong}
         mb={[5, 6]}
