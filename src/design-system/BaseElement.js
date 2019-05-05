@@ -1,0 +1,65 @@
+import styled from '@emotion/styled';
+import shouldForwardProp from '@styled-system/should-forward-prop';
+import {
+  display,
+  space,
+  width,
+  maxWidth,
+  minWidth,
+  height,
+  maxHeight,
+  minHeight,
+  position,
+  top,
+  left,
+  right,
+  bottom,
+  zIndex,
+  borders,
+  opacity,
+  justifyContent,
+  justifySelf,
+  alignItems,
+  alignContent,
+  alignSelf,
+  flexBasis,
+  order,
+  gridColumn,
+  gridRow,
+  gridArea,
+} from 'styled-system';
+
+const BaseElement = styled('div', {
+  shouldForwardProp,
+})(
+  display,
+  space,
+  width,
+  maxWidth,
+  minWidth,
+  height,
+  maxHeight,
+  minHeight,
+  position,
+  top,
+  left,
+  right,
+  bottom,
+  zIndex,
+  borders,
+  opacity,
+  justifyContent,
+  justifySelf,
+  alignItems,
+  alignContent,
+  alignSelf,
+  flexBasis,
+  order,
+  gridColumn,
+  gridRow,
+  gridArea,
+);
+
+BaseElement.displayName = 'BaseElement';
+
+export default BaseElement;

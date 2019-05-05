@@ -16,7 +16,7 @@ const ContentNode = ({ node, ...props }) => {
   );
 
   if (!type) {
-    return <React.Fragment>{nodeChildren}</React.Fragment>;
+    return nodeChildren;
   }
 
   switch (type) {

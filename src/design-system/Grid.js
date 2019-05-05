@@ -10,9 +10,9 @@ import {
   gridTemplateColumns,
   gridTemplateAreas,
 } from 'styled-system';
-import Box from './Box';
+import BaseElement from './BaseElement';
 
-const Grid = styled(Box)(
+const Grid = styled(BaseElement)(
   {
     display: 'grid',
   },

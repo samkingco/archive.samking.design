@@ -1,8 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import Box from './Box';
-import Image from './Image';
-import Caption from './Caption';
+import { Box, Image, Caption } from './index';
 
 const Figure = styled(
   ({ src, srcSet, sizes, alt, caption, ratio, ...props }) => (

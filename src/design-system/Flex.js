@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
 import { flex, flexDirection, flexWrap } from 'styled-system';
-import Box from './Box';
+import BaseElement from './BaseElement';
 
-const Flex = styled(Box)(
+const Flex = styled(BaseElement)(
   {
     display: 'flex',
   },

@@ -1,18 +1,14 @@
 import React, { useRef, useState } from 'react';
 import styled from '@emotion/styled';
 import queryString from 'query-string';
-import Box from './Box';
 import useIntersectionObserver from '../hooks/useIntersectionObserver';
+import BaseElement from './BaseElement';
 
-const Img = styled(Box)({
+const Img = styled(BaseElement)({
   width: '100%',
   maxWidth: '100%',
   margin: 0,
 });
-
-Img.defaultProps = {
-  as: 'img',
-};
 
 Img.displayName = 'Img';
 
@@ -20,9 +16,12 @@ const NoScriptImg = styled(Img)({
   position: 'absolute',
   top: 0,
   left: 0,
+  height: '100%',
 });
 
-const ImgWrapper = styled(Box)(({ ratio }) => ({
+NoScriptImg.displayName = 'NoScriptImg';
+
+const Wrapper = styled(BaseElement)(({ ratio }) => ({
   position: 'relative',
   ...(ratio && {
     height: 0,
@@ -30,20 +29,9 @@ const ImgWrapper = styled(Box)(({ ratio }) => ({
   }),
 }));
 
-ImgWrapper.defaultProps = {
-  as: 'div',
-  m: 0,
-};
+Wrapper.displayName = 'Wrapper';
 
-ImgWrapper.displayName = 'ImgWrapper';
-
-const Image = ({
-  src,
-  alt,
-  widths = [512, 896, 1024, 2048, 2256],
-  processing,
-  ...props
-}) => {
+const Image = styled(({ src, alt, widths, processing, ...props }) => {
   const wrapperRef = useRef(null);
   const [hasLoaded, setHasLoaded] = useState(false);
   const [isInView] = useIntersectionObserver(wrapperRef, {
@@ -70,12 +58,15 @@ const Image = ({
     .join(',');
 
   return (
-    <ImgWrapper
+    <Wrapper
+      as="div"
       ref={wrapperRef}
       bg={hasLoaded ? 'transparent' : props.bg || 'bgAlt'}
+      m={0}
       {...props}
     >
       <Img
+        as="img"
         src={isInView ? defaultSrc : ''}
         srcSet={isInView ? srcSet : ''}
         sizes={sizes}
@@ -84,13 +75,14 @@ const Image = ({
         opacity={hasLoaded ? 1 : 0}
       />
       <noscript>
-        <NoScriptImg src={defaultSrc} alt={alt} />
+        <NoScriptImg as="img" src={defaultSrc} alt={alt} />
       </noscript>
-    </ImgWrapper>
+    </Wrapper>
   );
-};
+})();
 
 Image.defaultProps = {
+  widths: [512, 896, 1024, 2048, 2256],
   processing: {
     auto: 'format',
     lossless: true,

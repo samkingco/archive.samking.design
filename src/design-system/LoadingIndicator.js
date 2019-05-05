@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { keyframes } from '@emotion/core';
-import Box from './Box';
+import BaseElement from './BaseElement';
 
 const spin = keyframes`
   to {
@@ -8,7 +8,7 @@ const spin = keyframes`
   }
 `;
 
-const LoadingIndicator = styled(Box)(({ theme, speed }) => ({
+const LoadingIndicator = styled(BaseElement)(({ theme }) => ({
   borderRadius: '50%',
   position: 'relative',
   verticalAlign: 'middle',
@@ -22,7 +22,7 @@ const LoadingIndicator = styled(Box)(({ theme, speed }) => ({
     borderRadius: '50%',
     border: `2px solid ${theme.colors.bgAlt}`,
     borderTopColor: theme.colors.text,
-    animation: `${spin} ${speed} linear infinite`,
+    animation: `${spin} 0.5s linear infinite`,
   },
 }));
 
@@ -31,7 +31,6 @@ LoadingIndicator.defaultProps = {
   display: 'inline-block',
   width: '24px',
   height: '24px',
-  speed: '0.5s',
 };
 
 LoadingIndicator.displayName = 'LoadingIndicator';
