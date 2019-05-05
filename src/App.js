@@ -1,12 +1,13 @@
 import React from 'react';
 import { Router } from '@reach/router';
-import { Root, Routes, Head } from 'react-static';
+import { Root, Routes } from 'react-static';
 import { ThemeProvider } from 'emotion-theming';
 import { GlobalStyle, GlobalFonts, Flex } from './design-system';
 import {
   ActiveThemeProvider,
   useActiveThemeContext,
 } from './components/ActiveTheme';
+import Head from './components/Head';
 import SiteHeader from './components/SiteHeader';
 import SiteFooter from './components/SiteFooter';
 import SiteContentFallback from './components/SiteContentFallback';
@@ -21,13 +22,16 @@ function AppContent() {
 
   return (
     <Root>
-      <Head titleTemplate={`%s | ${title}`} defaultTitle={title}>
-        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-        <meta property="og:title" content={title} />
-        <meta property="og:image" content="https://samking.design/logo.png" />
-        <meta property="og:site_name" content="Sam King" />
-        <meta name="twitter:site" content="@samkingco" />
-      </Head>
+      <Head
+        titleTemplate={`%s | ${title}`}
+        defaultTitle={title}
+        socialTitle={title}
+        socialImage="https://samking.design/logo.png"
+        socialUrl="https://samking.design"
+        siteName="Sam King"
+        handle="@samkingco"
+        favicon="/favicon.ico"
+      />
       <ThemeProvider theme={theme}>
         <GlobalStyle {...theme.colors} />
         <Flex flexDirection="column" minHeight="100vh">

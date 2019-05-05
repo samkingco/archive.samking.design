@@ -1,7 +1,8 @@
 import React from 'react';
-import { useRouteData, Head } from 'react-static';
+import { useRouteData } from 'react-static';
 import useTheme from '../hooks/useTheme';
 import { PageWrapper, Figure, Grid } from '../design-system';
+import Head from '../components/Head';
 import ProjectPageHeader from '../components/ProjectPageHeader';
 import ProjectPageContent from '../components/ProjectPageContent';
 import RelatedProjects from '../components/RelatedProjects';
@@ -21,25 +22,16 @@ function Project() {
 
   useTheme(slug, [slug]);
 
-  const meta = {
-    title,
-    socialTitle: `${title}: A project by Sam King`,
-    description: intro,
-    image: `${cover.src}?fit=crop&w=1200&h=600&crop=edges`,
-    url: `https://samking.design/${slug}`,
-  };
-
   return (
     <PageWrapper as="main" role="main">
-      <Head>
-        <title>{meta.title}</title>
-        <meta name="description" content={meta.description} />
-        <meta property="og:title" content={meta.socialTitle} />
-        <meta property="og:description" content={meta.description} />
-        <meta property="og:image" content={meta.image} />
-        <meta property="og:url" content={meta.url} />
-        <meta name="twitter:card" content="summary_large_image" />
-      </Head>
+      <Head
+        title={title}
+        socialTitle={`${title}: A project by Sam King`}
+        description={intro}
+        socialImage={`${cover.src}?fit=crop&w=1200&h=600&crop=edges`}
+        socialUrl={`https://samking.design/${slug}`}
+        twitterCard="summary_large_image"
+      />
 
       <Grid as="article" gridTemplateColumns="repeat(8, 1fr)">
         <ProjectPageHeader

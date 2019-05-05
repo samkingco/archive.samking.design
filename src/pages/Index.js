@@ -1,7 +1,8 @@
 import React from 'react';
-import { useSiteData, useRouteData, Head } from 'react-static';
+import { useSiteData, useRouteData } from 'react-static';
 import useTheme from '../hooks/useTheme';
 import { PageWrapper } from '../design-system';
+import Head from '../components/Head';
 import PreviousWork from '../components/PreviousWork';
 import JobHistory from '../components/JobHistory';
 import About from '../components/About';
@@ -11,19 +12,9 @@ function Index() {
   const { email, twitter, location, latlong } = useSiteData();
   const { projects, history } = useRouteData();
 
-  const meta = {
-    description:
-      'I’m a designer primarily working on the web. I love building products that make people and teams more efficient. I’m currently building tools for Restaurants at Deliveroo.',
-    url: `https://samking.design`,
-  };
-
   return (
     <PageWrapper as="main" role="main">
-      <Head>
-        <meta name="description" content={meta.description} />
-        <meta property="og:description" content={meta.description} />
-        <meta property="og:url" content={meta.url} />
-      </Head>
+      <Head description="I'm a designer primarily working on the web. I love building products that make people and teams more efficient. I'm currently building tools for Restaurants at Deliveroo." />
 
       <About
         as="section"
