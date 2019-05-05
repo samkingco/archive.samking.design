@@ -17,21 +17,10 @@ import scrollHandler from './utils/scrollHandler';
 scrollHandler();
 
 function AppContent() {
-  const title = 'Sam King—Designer';
   const { theme } = useActiveThemeContext();
 
   return (
     <Root>
-      <Head
-        titleTemplate={`%s | ${title}`}
-        defaultTitle={title}
-        socialTitle={title}
-        socialImage="https://samking.design/logo.png"
-        socialUrl="https://samking.design"
-        siteName="Sam King"
-        handle="@samkingco"
-        favicon="/favicon.ico"
-      />
       <ThemeProvider theme={theme}>
         <GlobalStyle {...theme.colors} />
         <Flex flexDirection="column" minHeight="100vh">
@@ -51,8 +40,21 @@ function AppContent() {
 }
 
 function App() {
+  const title = 'Sam King—Designer';
+
   return (
     <React.Fragment>
+      <Head
+        titleTemplate={`%s | ${title}`}
+        defaultTitle={title}
+        socialTitle={title}
+        socialImage="https://samking.design/logo.png"
+        socialUrl="https://samking.design"
+        siteName="Sam King"
+        handle="@samkingco"
+        favicon="/favicon.ico"
+      />
+
       <GlobalFonts />
       <ActiveThemeProvider>
         <AppContent />
