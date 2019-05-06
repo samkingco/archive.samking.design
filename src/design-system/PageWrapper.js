@@ -7,6 +7,7 @@ const PageWrapper = styled(Flex)(
     flexDirection: 'column',
     flex: 1,
     width: '100%',
+    maxWidth: '70em',
     height: '100%',
     px: [1, 2],
     py: [5, 6],
