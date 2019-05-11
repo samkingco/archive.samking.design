@@ -10,8 +10,8 @@ const BASE_TEXT_STYLE = css({
   m: 0,
   color: 'text',
   letterSpacing: 'normal',
-  transition: 'color 150ms ease-in-out',
   lineHeight: 1,
+  transition: 'color 250ms ease-in-out 0s',
 });
 
 export const Caption = styled('small', { shouldForwardProp })(
