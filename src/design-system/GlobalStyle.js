@@ -1,7 +1,10 @@
 import React from 'react';
 import { Global, css } from '@emotion/core';
+import { useActiveThemeContext } from '../components/ActiveTheme';
 
-export function GlobalStyle({ bg, fg, selectionBg, selectionFg }) {
+export function GlobalStyle() {
+  const { theme } = useActiveThemeContext();
+
   return (
     <Global
       styles={css`
@@ -23,14 +26,14 @@ export function GlobalStyle({ bg, fg, selectionBg, selectionFg }) {
         }
 
         body {
-          background-color: ${bg};
-          color: ${fg};
+          background-color: ${theme.colors.bg};
+          color: ${theme.colors.fg};
           transition: background-color 150ms ease-in-out;
         }
 
         ::selection {
-          background-color: ${selectionBg};
-          color: ${selectionFg};
+          background-color: ${theme.colors.selectionBg};
+          color: ${theme.colors.selectionFg};
         }
       `}
     />

@@ -1,4 +1,5 @@
 import React, { useState, useContext } from 'react';
+import { ThemeProvider } from 'emotion-theming';
 import theme from '../design-system/theme';
 
 const ActiveThemeContext = React.createContext();
@@ -14,7 +15,11 @@ function getTheme(mode, defaultMode) {
   };
 }
 
-export const ActiveThemeProvider = ({ defaultMode = 'light', ...props }) => {
+export const ActiveThemeProvider = ({
+  defaultMode = 'light',
+  children,
+  ...props
+}) => {
   const modeNames = Object.keys(theme.colors.modes);
   const [mode, setMode] = useState(defaultMode);
   const activeTheme = getTheme(mode, defaultMode);
@@ -30,5 +35,9 @@ export const ActiveThemeProvider = ({ defaultMode = 'light', ...props }) => {
     setTheme,
   };
 
-  return <ActiveThemeContext.Provider {...props} value={value} />;
+  return (
+    <ActiveThemeContext.Provider {...props} value={value}>
+      <ThemeProvider theme={activeTheme}>{children}</ThemeProvider>
+    </ActiveThemeContext.Provider>
+  );
 };
