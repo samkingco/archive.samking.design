@@ -14,7 +14,7 @@ function getTheme(mode, defaultMode) {
   };
 }
 
-export const ActiveThemeProvider = ({ defaultMode, ...props }) => {
+export const ActiveThemeProvider = ({ defaultMode = 'light', ...props }) => {
   const modeNames = Object.keys(theme.colors.modes);
   const [mode, setMode] = useState(defaultMode);
   const activeTheme = getTheme(mode, defaultMode);
@@ -31,8 +31,4 @@ export const ActiveThemeProvider = ({ defaultMode, ...props }) => {
   };
 
   return <ActiveThemeContext.Provider {...props} value={value} />;
-};
-
-ActiveThemeProvider.defaultProps = {
-  defaultMode: 'light',
 };
