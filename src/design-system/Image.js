@@ -9,6 +9,7 @@ const Img = styled('img', { shouldForwardProp })(
     width: '100%',
     maxWidth: '100%',
     margin: 0,
+    transition: 'opacity 250ms ease-in-out 250ms',
   },
   BASE_ELEMENT_PROPS,
 );
@@ -27,6 +28,7 @@ NoScriptImg.displayName = 'NoScriptImg';
 const Wrapper = styled('div', { shouldForwardProp })(
   {
     margin: 0,
+    transition: 'background 250ms ease-in-out 0s',
   },
   BASE_ELEMENT_PROPS,
   ({ ratio }) => ({
