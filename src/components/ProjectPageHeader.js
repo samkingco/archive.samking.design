@@ -15,7 +15,9 @@ function ProjectPageHeader({ title, intro, date, roles, link, ...props }) {
         </Box>
         {link && (
           <Box as="span" display={['block', null, 'inline-block']}>
-            <Link to={link.url}>{link.text}</Link>
+            <Link to={link.url} color="textAlt">
+              {link.text}
+            </Link>
           </Box>
         )}
       </Caption>

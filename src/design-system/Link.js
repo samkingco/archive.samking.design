@@ -5,27 +5,20 @@ import { shouldForwardProp, BASE_ELEMENT_PROPS } from './props';
 
 const BaseLink = styled('a', { shouldForwardProp })(
   ({ theme, shouldUnderline }) => ({
-    position: 'relative',
-    textDecoration: 'none',
     outline: 'none',
+    textDecoration: 'none',
+    backgroundImage: `linear-gradient(transparent calc(100% - 1px), ${
+      shouldUnderline ? 'currentColor' : 'transparent'
+    } 1px)`,
+    backgroundSize: '100% 100%',
+    backgroundRepeat: 'no-repeat',
+    transition:
+      'background-size 150ms ease-in-out 0s, background 150ms ease-in-out 0s, color 150ms ease-in-out 0s',
+    // Make sure the underline isn't too tight to the text
+    paddingBottom: shouldUnderline ? 2 : 0,
     '&:hover': {
       color: theme.colors.accent,
-    },
-    '&:hover:after': {
-      width: 0,
-      left: '50%',
-    },
-    '&:after': {
-      content: '""',
-      position: 'absolute',
-      height: '1px',
-      width: '100%',
-      backgroundColor: 'currentColor',
-      left: 0,
-      bottom: '-2px',
-      transition:
-        'width 100ms ease-in-out, background-color 100ms ease-in-out, left 100ms ease-in-out',
-      opacity: shouldUnderline ? 1 : 0,
+      backgroundSize: '0 100%',
     },
   }),
   BASE_ELEMENT_PROPS,
@@ -33,7 +26,7 @@ const BaseLink = styled('a', { shouldForwardProp })(
 
 const Link = styled(({ to, ...props }) => {
   const commonProps = {
-    color: 'inherit',
+    color: 'text',
     shouldUnderline: true,
     ...props,
   };
