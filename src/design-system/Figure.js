@@ -4,7 +4,7 @@ import { Box, Image, Caption } from './index';
 
 const Figure = styled(
   ({ src, srcSet, sizes, alt, caption, ratio, ...props }) => (
-    <Box as="figure" {...props}>
+    <Box as="figure" m={0} {...props}>
       <Image src={src} srcSet={srcSet} sizes={sizes} alt={alt} ratio={ratio} />
       {caption && (
         <Caption as="figcaption" color="textAlt" textAlign="right" mt={1}>
@@ -14,10 +14,6 @@ const Figure = styled(
     </Box>
   ),
 )();
-
-Figure.defaultProps = {
-  m: 0,
-};
 
 Figure.displayName = 'Figure';
 

@@ -1,10 +1,9 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { color } from 'styled-system';
 import { Link as RouterLink } from '@reach/router';
-import BaseElement from './BaseElement';
+import { shouldForwardProp, BASE_ELEMENT_PROPS } from './props';
 
-const BaseLink = styled(BaseElement)(
+const BaseLink = styled('a', { shouldForwardProp })(
   ({ theme, shouldUnderline }) => ({
     position: 'relative',
     textDecoration: 'none',
@@ -29,21 +28,22 @@ const BaseLink = styled(BaseElement)(
       opacity: shouldUnderline ? 1 : 0,
     },
   }),
-  color,
+  BASE_ELEMENT_PROPS,
 );
 
-const Link = styled(({ to, ...props }) =>
-  to.startsWith('http') || to.startsWith('mailto') ? (
-    <BaseLink as="a" href={to} {...props} />
-  ) : (
-    <BaseLink as={RouterLink} to={to} {...props} />
-  ),
-)();
+const Link = styled(({ to, ...props }) => {
+  const commonProps = {
+    color: 'inherit',
+    shouldUnderline: true,
+    ...props,
+  };
 
-Link.defaultProps = {
-  color: 'inherit',
-  shouldUnderline: true,
-};
+  return to.startsWith('http') || to.startsWith('mailto') ? (
+    <BaseLink href={to} {...commonProps} />
+  ) : (
+    <BaseLink as={RouterLink} to={to} {...commonProps} />
+  );
+})();
 
 Link.displayName = 'Link';
 

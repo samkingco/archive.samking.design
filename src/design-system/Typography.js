@@ -1,96 +1,83 @@
 import styled from '@emotion/styled';
 import css from '@styled-system/css';
-import { color, textAlign } from 'styled-system';
-import BaseElement from './BaseElement';
+import {
+  shouldForwardProp,
+  BASE_ELEMENT_PROPS,
+  TYPOGRAPHY_PROPS,
+} from './props';
 
-const BaseText = styled(BaseElement)(
-  css({
-    transition: 'color 150ms ease-in-out',
-    lineHeight: 1,
-  }),
-  color,
-  textAlign,
-);
+const BASE_TEXT_STYLE = css({
+  m: 0,
+  color: 'text',
+  letterSpacing: 'normal',
+  transition: 'color 150ms ease-in-out',
+  lineHeight: 1,
+});
 
-BaseText.displayName = 'BaseText';
-
-export const Caption = styled(BaseText)(
+export const Caption = styled('small', { shouldForwardProp })(
+  BASE_TEXT_STYLE,
   css({
     fontFamily: 'text',
     fontWeight: 'normal',
     fontSize: 0,
-    letterSpacing: 'normal',
   }),
+  BASE_ELEMENT_PROPS,
+  TYPOGRAPHY_PROPS,
 );
-
-Caption.defaultProps = {
-  as: 'small',
-  color: 'text',
-  m: 0,
-};
 
 Caption.displayName = 'Caption';
 
-export const Body = styled(BaseText)(
+export const Body = styled('p', { shouldForwardProp })(
+  BASE_TEXT_STYLE,
   css({
     fontFamily: 'text',
     fontWeight: 'normal',
     fontSize: 1,
-    letterSpacing: 'normal',
   }),
+  BASE_ELEMENT_PROPS,
+  TYPOGRAPHY_PROPS,
 );
-
-Body.defaultProps = {
-  as: 'p',
-  color: 'text',
-  m: 0,
-};
 
 Body.displayName = 'Body';
 
-export const Headline = styled(BaseText)(({ size }) => {
+export const Headline = styled('h2', { shouldForwardProp })(({ size }) => {
   const sizes = {
     s: 1,
     m: [1, 2],
     l: [2, 3],
   };
 
-  return css({
-    fontFamily: 'textAlt',
-    fontWeight: 'bold',
-    fontSize: sizes[size] || sizes.m,
-    letterSpacing: 'normal',
-    textTransform: 'uppercase',
-  });
+  return [
+    BASE_TEXT_STYLE,
+    css({
+      fontFamily: 'textAlt',
+      fontWeight: 'bold',
+      fontSize: sizes[size] || sizes.m,
+      textTransform: 'uppercase',
+    }),
+    BASE_ELEMENT_PROPS,
+    TYPOGRAPHY_PROPS,
+  ];
 });
-
-Headline.defaultProps = {
-  as: 'h2',
-  color: 'text',
-  m: 0,
-};
 
 Headline.displayName = 'Headline';
 
-export const Title = styled(BaseText)(
+export const Title = styled('h2', { shouldForwardProp })(
+  BASE_TEXT_STYLE,
   css({
     fontFamily: 'textAlt',
     fontWeight: 'bold',
     fontSize: [2, 3],
-    letterSpacing: 'normal',
     textTransform: 'uppercase',
   }),
+  BASE_ELEMENT_PROPS,
+  TYPOGRAPHY_PROPS,
 );
-
-Title.defaultProps = {
-  as: 'h2',
-  color: 'text',
-  m: 0,
-};
 
 Title.displayName = 'Title';
 
-export const WordMark = styled(BaseText)(
+export const WordMark = styled('h1', { shouldForwardProp })(
+  BASE_TEXT_STYLE,
   css({
     color: 'text',
     fontFamily: 'textAlt',
@@ -99,10 +86,8 @@ export const WordMark = styled(BaseText)(
     letterSpacing: 'extreme',
     textTransform: 'uppercase',
   }),
+  BASE_ELEMENT_PROPS,
+  TYPOGRAPHY_PROPS,
 );
-
-WordMark.defaultProps = {
-  m: 0,
-};
 
 WordMark.displayName = 'WordMark';
