@@ -1,4 +1,5 @@
 import * as system from 'styled-system';
+export { default as css } from '@styled-system/css';
 export {
   default as shouldForwardProp,
 } from '@styled-system/should-forward-prop';

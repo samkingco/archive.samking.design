@@ -9,9 +9,8 @@
     "@emotion/core": "^10.0.10",
     "@emotion/styled": "^10.0.10",
     "@reach/router": "^1.2.1",
-    "@styled-system/css": "^2.0.0",
+    "@styled-system/css": "^2.0.4",
     "@styled-system/should-forward-prop": "^1.0.0",
-    "babel-plugin-emotion": "^10.0.9",
     "emotion": "^10.0.9",
     "emotion-theming": "^10.0.10",
     "immer": "^2.1.5",
@@ -23,7 +22,9 @@
     "styled-system": "^4.1.0"
   },
   "devDependencies": {
+    "@emotion/babel-preset-css-prop": "^10.0.14",
     "babel-eslint": "9.x",
+    "babel-plugin-emotion": "^10.0.9",
     "eslint": "5.x",
     "eslint-config-react-app": "^3.0.8",
     "eslint-config-react-tools": "1.x.x",

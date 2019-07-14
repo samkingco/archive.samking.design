@@ -28,7 +28,7 @@ export function GlobalStyle() {
         body {
           background-color: ${theme.colors.bg};
           color: ${theme.colors.fg};
-          transition: background-color 250ms ease-in-out 0s;
+          transition: background-color 250ms ease-in-out;
         }
 
         ::selection {

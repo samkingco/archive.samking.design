@@ -11,7 +11,7 @@ const BASE_TEXT_STYLE = css({
   color: 'text',
   letterSpacing: 'normal',
   lineHeight: 1,
-  transition: 'color 250ms ease-in-out 0s',
+  transition: 'color 250ms ease-in-out',
 });
 
 export const Caption = styled('small', { shouldForwardProp })(

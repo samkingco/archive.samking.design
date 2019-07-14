@@ -1,10 +1,7 @@
-import React, { useState } from 'react';
-import { Box, Grid, Headline, Body, Link } from '../design-system';
+import React from 'react';
+import { css, Box, Grid, Headline, Body, Link } from '../design-system';
 
 function RelatedProjects({ projects, ...props }) {
-  const [hoveredIndex, setHoveredIndex] = useState(null);
-  const getBorderColor = index => (hoveredIndex === index ? 'accent' : 'bgAlt');
-
   return (
     <Grid gridTemplateColumns="repeat(8, 1fr)" {...props}>
       {projects.map(({ slug, title, byline, date }, index) => (
@@ -14,12 +11,18 @@ function RelatedProjects({ projects, ...props }) {
           role="listitem"
           shouldUnderline={false}
           border={2}
-          borderColor={getBorderColor(index)}
           display="block"
           gridColumn={['1 / span 8', '2 / span 6', '3 / span 4']}
           mb={index === projects.length - 1 ? 0 : 4}
-          onMouseEnter={() => setHoveredIndex(index)}
-          onMouseLeave={() => setHoveredIndex(null)}
+          css={css({
+            '&, & > *': {
+              borderColor: 'bgAlt',
+              transition: 'border-color 250ms ease-in-out',
+            },
+            '&:hover, &:hover > *': {
+              borderColor: 'accent',
+            },
+          })}
         >
           <Box p={2}>
             <Headline
@@ -38,11 +41,7 @@ function RelatedProjects({ projects, ...props }) {
             </Body>
           </Box>
 
-          <Grid
-            borderTop={2}
-            borderColor={getBorderColor(index)}
-            gridTemplateColumns="repeat(6, 1fr)"
-          >
+          <Grid borderTop={2} gridTemplateColumns="repeat(6, 1fr)">
             <Body aria-label="Date:" gridColumn="1 / span 6" py={1} px={2}>
               {date}
             </Body>

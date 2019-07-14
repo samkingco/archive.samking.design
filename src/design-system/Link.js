@@ -13,7 +13,7 @@ const BaseLink = styled('a', { shouldForwardProp })(
     backgroundSize: '100% 100%',
     backgroundRepeat: 'no-repeat',
     transition:
-      'background-size 250ms ease-in-out 0s, background 250ms ease-in-out 0s, color 250ms ease-in-out 0s',
+      'background-size 250ms ease-in-out, background 250ms ease-in-out, color 250ms ease-in-out',
     // Make sure the underline isn't too tight to the text
     paddingBottom: shouldUnderline ? 2 : 0,
     '&:hover': {

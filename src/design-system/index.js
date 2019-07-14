@@ -11,3 +11,5 @@ export { default as Figure } from './Figure';
 
 export { default as PageWrapper } from './PageWrapper';
 export { default as LoadingIndicator } from './LoadingIndicator';
+
+export { css } from './props';
