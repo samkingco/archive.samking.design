@@ -10,7 +10,7 @@ function SiteHeader(props) {
         </Link>
       </WordMark>
       <Caption as="h2" color="textAlt">
-        Product Designer for Restaurants at Deliveroo
+        Product Designer at Echo
       </Caption>
     </Box>
   );

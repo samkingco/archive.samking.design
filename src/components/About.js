@@ -33,9 +33,10 @@ function About({ email, twitter, location, latlong, ...props }) {
         ]}
       >
         <Body mb={2}>
-          I’m currently building tools for Restaurants at Deliveroo. This
-          website serves as a small showcase of work from the last few years,
-          both personal and for startups. Open to new projects—hit me up.
+          I’m currently building internal tools for clinical and operational
+          staff at <Link to="https://echo.co.uk">Echo</Link>. This website
+          serves as a small showcase of work from the last few years, both
+          personal and for startups.
         </Body>
         <Body>
           Email: <Link to={`mailto:${email}`}>{emailText}</Link>
