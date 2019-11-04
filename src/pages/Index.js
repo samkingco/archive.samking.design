@@ -14,7 +14,7 @@ function Index() {
 
   return (
     <PageWrapper as="main" role="main">
-      <Head description="I'm a designer primarily working on the web. I love building products that make people and teams more efficient. I'm currently building tools for Restaurants at Deliveroo." />
+      <Head description="I'm a designer primarily working on the web. I love building products that make people and teams more efficient. I’m currently building internal tools for clinical and operational staff at Echo." />
 
       <About
         as="section"
