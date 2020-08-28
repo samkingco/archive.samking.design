@@ -14,13 +14,16 @@ function Index() {
 
   return (
     <PageWrapper as="main" role="main">
-      <Head description="I'm a designer primarily working on the web. I love building products that make people and teams more efficient. I’m currently building internal tools for clinical and operational staff at Echo." />
+      <Head
+        description="I’m a designer that loves building products to help people and teams
+        make better decisions. I’m currently revamping the patient experience at Echo so more people can get the medicine they need. Previously I was working on internal tools for our clinical and operational staff."
+      />
 
       <About
         as="section"
         aria-label="About me"
         email={email}
-        twitter={handle}
+        socialHandle={handle}
         location={location}
         latlong={latlong}
         mb={[5, 6]}
