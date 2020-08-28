@@ -9,7 +9,7 @@ export const fonts = {
   textAlt: `"TextAlt", ${sansStack}`,
 };
 
-export const fontSizes = [14, 16, 20, 32];
+export const fontSizes = [14, 16, 20, 32, 40, 56];
 export const fontWeights = ['normal', 'bold'];
 export const lineHeights = ['1.2em', '1.4em', '1.6em'];
 
