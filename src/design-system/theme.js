@@ -6,7 +6,7 @@ const sansStack =
 
 export const fonts = {
   text: `"Text", ${sansStack}`,
-  textAlt: `"TextAlt", ${sansStack}`,
+  textAlt: `"Nikolai", ${sansStack}`,
 };
 
 export const fontSizes = [14, 16, 20, 32, 40, 56];

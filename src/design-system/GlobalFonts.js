@@ -24,10 +24,10 @@ export function GlobalFonts() {
         }
 
         @font-face {
-          font-family: 'TextAlt';
+          font-family: 'Nikolai';
           font-display: fallback;
-          src: url('/fonts/TextAlt.woff') format('woff'),
-            url('/fonts/TextAlt.woff2') format('woff2');
+          src: url('/fonts/Nikolai.woff') format('woff'),
+            url('/fonts/Nikolai.woff2') format('woff2');
           font-style: normal;
           font-weight: bold;
         }
