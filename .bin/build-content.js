@@ -16,7 +16,7 @@ const { APP_IMAGE_BASE_URLS } = process.env;
 const DIRS = {
   contentSrc: path.resolve(__dirname, '../content'),
   contentDest: path.resolve(__dirname, '../content/dist'),
-  imagesDest: path.resolve(__dirname, '../content/dist/images'),
+  imagesDest: path.resolve(__dirname, '../public/images'),
 };
 
 const buildProject = async (project, src, dest) => {
@@ -71,7 +71,7 @@ const build = async () => {
   await writeContentJSON(DIRS.contentDest, 'projects.json', projects);
   await writeContentJSON(DIRS.contentDest, 'history.json', history);
 
-  // Copy to `./images` to be served by local server or synced to S3
+  // Copy to `/public/images`
   await copyImages(
     [...allProjects.reduce((i, project) => [...i, ...project.images], [])],
     DIRS.imagesDest,

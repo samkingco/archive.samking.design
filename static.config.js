@@ -1,11 +1,11 @@
-import pkg from './package.json';
-import projects from './content/dist/projects.json';
 import history from './content/dist/history.json';
+import projects from './content/dist/projects.json';
+import pkg from './package.json';
 
 export default {
   plugins: ['react-static-plugin-emotion'],
   productionSourceMaps: true,
-  siteRoot: 'https://samking.design',
+  siteRoot: 'https://archive.samking.design',
   getSiteData: async () => ({
     version: pkg.version,
     email: 'mail@samking.co',

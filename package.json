@@ -3,6 +3,7 @@
   "version": "0.3.0",
   "private": true,
   "scripts": {
+    "build": "cross-env react-static build",
     "task": "node ./tasksfile.js"
   },
   "dependencies": {

@@ -20,18 +20,12 @@ const PORTS = {
   IMAGE_SERVER: 4001,
 };
 
-const IMAGE_BASE_URLS = {
-  dev: 'https://samkingco.imgix.net/design',
-  prod: 'https://samkingco.imgix.net/design',
-  local: `http://localhost:${PORTS.IMAGE_SERVER}`,
-};
-
 function buildContent(_, stage = 'prod') {
   console.log(`Building ${pkg.name} content for ${envMap[stage]}`);
 
   const env = [
     `NODE_ENV=${envMap[stage]}`,
-    `APP_IMAGE_BASE_URLS=${IMAGE_BASE_URLS[stage]}`,
+    `APP_IMAGE_BASE_URLS=/images`,
   ];
 
   sh(`cross-env ${env.join(' ')} node ${PATHS.bin}/build-content.js`);

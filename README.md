@@ -1,8 +1,8 @@
-<img src='https://samking.design/logo.png' width='128' height='128' />
+<img src='https://samking.design/avatar.jpg' width='128' height='128' />
 
 # samking.design
 
-Design portfolio of Sam King—https://samking.design
+Archived design portfolio of Sam King—https://archive.samking.design
 
 [![Build status][ci]][circle]
 ![MIT License][license]
@@ -14,8 +14,6 @@ Design portfolio of Sam King—https://samking.design
 [circle]: https://circleci.com/gh/samkingco/samking.design
 
 ```sh
-git clone git@github.com:samkingco/samking.design.git
-cd samking.design
 npm install
 npm run task -- --help
 ```
